@@ -39,8 +39,24 @@ myApp.onPageInit('clients', function (page) {
 myApp.onPageInit('component', function (page) {
         // Do something here for "index" page
         console.log(page.name + ' initialized');
+    $('.tab-link-active')[0].click();
+    console.log(page.name + ' initialized');
+    $('.mCheck').click(function(){
+        $(this).toggleClass('fa fa-circle-o');
+        $(this).toggleClass('fa fa-check-circle-o');
+    });
+    
+    })
+
+
+myApp.onPageInit('engine', function (page) {
+        // Do something here for "index" page
+        console.log(page.name + ' initialized');
     $('.tab-link-active')[0].click()
     })
+
+
+
 
     // Using page callback for page (for "detailed course view" page in this case) (recommended way):
 myApp.onPageInit('detailedCourseView', function (page) {
