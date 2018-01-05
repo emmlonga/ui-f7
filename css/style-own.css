@@ -1,3 +1,34 @@
+/*Technician*/
+
+.tImg {
+    width: auto;
+    height: 100px;
+    background-color: transparent;
+    position: relative;
+    right: 5px;
+    top: 0px;
+}
+
+.tImgDiv {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: block;
+    margin-left: 12.5px;
+    margin-top: 5px;
+    margin-bottom: -11.5px;
+    background-color: white;
+    border: 1.5px solid rgb(48,112,179);
+    z-index: 60;
+    overflow: hidden;
+}
+
+.tInfo{
+    position: absolute;
+    top: 20px;
+    left: 125px;
+}
+
 .cButton button{
     min-width:36px;
     margin-left: 6px;
