@@ -33,7 +33,7 @@ myApp.onPageInit('index', function (page) {
 myApp.onPageInit('clients', function (page) {
         // Do something here for "index" page
         console.log(page.name + ' initialized');
-    $('.tab-link-active')[0].click()
+    $('.tab-link-active')[0].click();
     })
 
 myApp.onPageInit('component', function (page) {
