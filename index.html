@@ -202,7 +202,7 @@
     
      <!-- Filter -->
   <div class="picker-modal picker-1" style="background-color:white">
-    <div class="toolbar">
+    <div class="toolbar" style="background-color: #343048">
       <div class="toolbar-inner">
         <div class="left"><span>Filter</span></div>
           <a href="#" class="button button-fill color-teal" onclick="resetFilter('#filterForm')">Reset</a>
@@ -216,25 +216,7 @@
   <ul>
     <!-- Text inputs -->
       
-            <li><a href="#" class="item-link smart-select" data-open-in="picker" data-picker-height="400px" style="width:50%">
-        <!-- "multiple" attribute for multiple select-->
-        <select name="Tag" multiple>
-          <!-- options grouped within "optgroup" tag-->
-          <optgroup label="Test">
-            <option value="tag1" selected>Tag1</option>
-          </optgroup>
-          <optgroup label="Pros">
-            <option value="tag2" selected>Tag2</option>
-          </optgroup>
-          <optgroup label="Cons">
-            <option value="tag3">Tag3</option>
-          </optgroup>
-        </select>
-        <div class="item-content">
-          <div class="item-inner">
-            <div class="item-title">Tags</div>
-          </div>
-        </div></a>
+            <li>
                 
         <div class="position">
         <label class="label-checkbox item-content" style="padding:0px">
@@ -247,36 +229,8 @@
         </div>
       </label></div>
                 
-              <li><a href="#" class="item-link smart-select" data-open-in="picker" data-picker-height="400px" style="width:50%">
-        <!-- "multiple" attribute for multiple select-->
-        <select name="Department" multiple>
-          <!-- options grouped within "optgroup" tag-->
-          <optgroup label="Test">
-            <option value="tag1" selected>Tag1</option>
-          </optgroup>
-          <optgroup label="Pros">
-            <option value="tag2" selected>Tag2</option>
-          </optgroup>
-          <optgroup label="Cons">
-            <option value="tag3">Tag3</option>
-          </optgroup>
-        </select>
-        <div class="item-content">
-          <div class="item-inner">
-            <div class="item-title">Departments</div>
-          </div>
-        </div></a>
+              
                 
-        <div class="position">
-        <label class="label-checkbox item-content" style="padding:0px">
-        <div class="item-inner">
-          <div class="item-title">Hide Attended:</div>
-        </div>
-        <input type="checkbox" name="hideAttended" value="yes">
-        <div class="item-media">
-          <i class="icon icon-form-checkbox"></i>
-        </div>
-      </label></div>
 
 
     <!-- Select -->
@@ -377,7 +331,7 @@
           <i class="icon icon-form-radio"></i>
         </div>
         <div class="item-inner">
-          <div class="item-title">ECTS</div>
+          <div class="item-title">Date</div>
         </div>
       </label>
     </li>
@@ -390,19 +344,7 @@
           <i class="icon icon-form-radio"></i>
         </div>
         <div class="item-inner">
-          <div class="item-title">Language</div>
-        </div>
-      </label>
-    </li>
-          <li>
-      <label class="label-radio item-content">
-        <!-- Checked by default -->
-        <input type="radio" name="myradio" value="Rating">
-        <div class="item-media">
-          <i class="icon icon-form-radio"></i>
-        </div>
-        <div class="item-inner">
-          <div class="item-title">Rating</div>
+          <div class="item-title">Pending Tasks</div>
         </div>
       </label>
     </li>
@@ -419,6 +361,7 @@
     <script src="js/courses.js"></script>
     <script src="js/test.js"></script>
     <script src="js/script-own-emmanuel.js"></script>
+    <script src="js/maint.js"></script>
 </body>
 
 </html>

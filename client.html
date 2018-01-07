@@ -67,6 +67,7 @@
                             </div>
                             <div class="center">Client Overview</div>
                             <div class="right">
+                                <i onclick="javascript:mainView.router.loadPage('index.html')" class="material-icons">home</i>
                                 <a href="#" class="link icon-only" onclick="createPopover()">
                                     <i class="fa fa-ellipsis-v"></i>
                                 </a>
@@ -90,7 +91,7 @@
                         <a href="" class="link">
                             <div class="card demo-card-header-pic blueCard" style="padding: 8px 0px">
                                 <div class="card-header color-black no-border">
-                                    <span style="font-size: medium; line-height: 42px">Center for Digital Technology & Management</span>                                    
+                                    <span style="font-size: 20px; line-height: 42px">Center for Digital Technology & Management</span>                                    
                             </div>
                                 <div class="card-header color-black no-border">
                                 <span style="font-size:15px;line-height: 36px"> <i style="position: relative;top:5px;font-size: 20px" class="material-icons">date_range</i> 07/11 11:00</span>
@@ -114,45 +115,33 @@
                                       <li class="swipeout">
                                           <div class="swipeout-content">
                                               <a href="">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal">
+                                                  <div class="item-inner" style="margin:0px 16px;justify-content: normal; font-size: 16px">
                                                       <div class="item-title-row" style="width: 186px">
-                                                          <div class="item-title"><b>Maintenance Tasks</b></div>
+                                                          <div class="item-title">Maintenance Tasks</div>
                                                       </div>
                                                       </div>
                                               </a>
                                           </div>                                     
                                       </li>
-                                      <li class="swipeout">
+                                      <li class="swipeout" id="1">
                                           <div class="swipeout-content">
                                               <a onclick="javascript:mainView.router.loadPage('component.html')">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal">
-                                                      <div style="margin: 0px 10px 0px 5px;height: 24px;"><i class="material-icons">radio_button_unchecked</i></div>
+                                                  <div class="item-inner" style="margin:0px 16px;justify-content: normal">
+                                                      <div style="margin: 0px 10px 0px 5px;height: 24px;"><i style="font-size: 24px" class="fa fa-circle-o" aria-hidden="true"></i></div>
                                                       <div class="item-title-row">
-                                                          <div class="item-title">Remove expired oil filter from engine</div>
+                                                          <div class="item-title">Remove faulty oil filter from engine</div>
                                                       </div>
                                                   </div>
                                               </a>
                                           </div>                                     
                                       </li>
-                                      <li class="swipeout">
+                                      <li class="swipeout" id="2">
                                           <div class="swipeout-content">
-                                              <a href="">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal">
-                                                      <div style="margin: 0px 10px 0px 5px;height: 24px;"><i class="material-icons">radio_button_unchecked</i></div>
+                                              <a onclick="javascript:mainView.router.loadPage('componentb.html')">
+                                                  <div class="item-inner" style="margin:0px 16px;justify-content: normal">
+                                                      <div style="margin: 0px 10px 0px 5px;height: 24px;"><i style="font-size: 24px" class="fa fa-circle-o" aria-hidden="true"></i></div>
                                                       <div class="item-title-row">
-                                                          <div class="item-title">Task 2</div>
-                                                      </div>
-                                                  </div>
-                                              </a>
-                                          </div>                                     
-                                      </li>
-                                      <li class="swipeout">
-                                          <div class="swipeout-content">
-                                              <a href="">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal">
-                                                      <div style="margin: 0px 10px 0px 5px;height: 24px;"><i class="material-icons">radio_button_unchecked</i></div>
-                                                      <div class="item-title-row">
-                                                          <div class="item-title">Task 3</div>
+                                                          <div class="item-title">Install new oil filter on engine</div>
                                                       </div>
                                                   </div>
                                               </a>

@@ -83,16 +83,28 @@
                     </div>
                     
                     <div class="page-content" style="padding-top: 56px">
-                         <div id="card-list">
+                       
+                         <form data-search-list=".list-block-search" data-search-in=".item-inner" class="searchbar searchbar-init" style="background-color:#343048">
+                        <div class="searchbar-input">
+                          <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+                        </div>
+                        <a href="#" data-picker=".picker-1" class="open-picker link icon-only">
+                            <i class="icon fa fa-filter" aria-hidden="true"></i>
+                                </a>
+                        <a href="#" data-picker=".picker-2" class="open-picker link icon-only">
+                            <i class="icon fa fa-sort" aria-hidden="true"></i>
+                                </a>
+                      </form>
+                         
+                        
+                        <div id="card-list">
                         <!--OBLIGATORY COURSE-->
                         <!--<div style="font-size:20px; padding: 20px;">Welcome Adam</div>-->
                                                
-                            <a href="detailedCourseView.html" class="link">
+                            <a class="link">
                             <div class="card demo-card-header-pic blueCard">
-                                <div class="card-header cardEdit color-black no-border">
-                                    <span>Your Inventory</span>
-                                </div>
-                                <div class="cardSubtitle">Outgoing Pieces
+                                <div class="cardSubtitle">
+                                    <div style="padding-top: 13px; font-size: 16px; padding-bottom: 8px;">Outgoing Components</div>
                                     <div class="progress" style="margin:6px 0px 0px 0px;">
                                         <div class="progress-bar progress-bar-success" role="progressbar" style="width:80%;color:black;overflow:hidden;background-color:#2E7D32">8</div>
                                         <div class="progress-bar progress-bar-info" role="progressbar" style="width:20%;color:black;overflow:hidden;background-color:#4CAF50">2</div>
@@ -103,21 +115,139 @@
                                         <div class="progress-bar" role="progressbar" style="width:44.11764705882353%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">Awaiting Pickup</div>
                                     </div>
                                 </div>
-                                <div class="cardSubtitle">Incoming Pieces
-                                    <div class="progress" style="margin:6px 0px 0px 0px;">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" style="width:23.52941176470588%;color:black;overflow:hidden;background-color:#2E7D32">8</div>
-                                        <div class="progress-bar progress-bar-info" role="progressbar" style="width:32.35294117647059%;color:black;overflow:hidden;background-color:#4CAF50">11</div>
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" style="width:44.11764705882353%;background-color:transparent;color:black;overflow:hidden">15</div></div>
-                                    <div class="progress caption" style="background-color:transparent;box-shadow:none;margin-bottom:0px;">
-                                        <div class="progress-bar" role="progressbar" style="width:23.52941176470588%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">Returned</div>
-                                        <div class="progress-bar" role="progressbar" style="width:32.35294117647059%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">On Truck</div>
-                                        <div class="progress-bar" role="progressbar" style="width:44.11764705882353%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">Awaiting Pickup</div>
-                                    </div>
-                                </div>
-                            </div>
+                                
+                                   <div style="background-color: white;" class="">
+                        <!-- This block will be displayed if nothing found -->
+                        <div class="content-block searchbar-not-found">
+                          <div class="content-block-inner">Nothing found</div>
+                        </div>
+
+                        <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+                        <div class="list-block list-block-search searchbar-found">
+                            <ul id="courseList">
+
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a onclick="mainView.router.reloadPage('component.html')" class="item-content item-link" style="background-image: none; padding-left: 0px">
+                                                <div class="item-inner"  style="background-image: none; padding: 0px 16px">
+                                                    <div class="item-title-row">
+                                                        <div class="item-after" style="margin-left: 0px">24/04/17</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Camshaft</b></div>
+                                                    <div class="item-title-row">
+                                                        <div class="item-after">CAMS-1030</div>
+                                                        <div class="item-after">1005026202017</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout-overswipe swipeout-favorite bg-indigo forward">Read Reviews</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete swipeout-overswipe" data-confirm="Are you sure want to hide this item?" data-confirm-title="Hide?"><i class="material-icons">visibility_off</i></a>
+                                        </div>
+
+                                    </li>
+                                <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a onclick="mainView.router.reloadPage('component.html')" class="item-content item-link" style="background-image: none; padding-left: 0px">
+                                                <div class="item-inner"  style="background-image: none; padding: 0px 16px">
+                                                    <div class="item-title-row">
+                                                        <div class="item-after" style="margin-left: 0px">24/04/17</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Oil Filter</b></div>
+                                                    <div class="item-title-row">
+                                                        <div class="item-after">HRMW-580</div>
+                                                        <div class="item-after">1000029402017</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout-overswipe swipeout-favorite bg-indigo forward">Read Reviews</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete swipeout-overswipe" data-confirm="Are you sure want to hide this item?" data-confirm-title="Hide?"><i class="material-icons">visibility_off</i></a>
+                                        </div>
+
+                                    </li>
+                                
+                                
+                                </ul>
+                        </div>
+                      </div>
+                   
+                                
+                             </div>
                         </a>
 
-                            </div></div>
+                            </div>
+                        
+                                                <div id="card-list">
+                        <!--OBLIGATORY COURSE-->
+                        <!--<div style="font-size:20px; padding: 20px;">Welcome Adam</div>-->
+                                               
+                            <a class="link">
+                            <div class="card demo-card-header-pic blueCard">
+                            <div class="cardSubtitle">
+                                <div style="padding-top: 13px; font-size: 16px; padding-bottom: 8px;">Returning Components</div>
+                                    <div class="progress" style="margin:6px 0px 0px 0px;">
+                                        
+                                        <div class="progress-bar progress-bar-info" role="progressbar" style="width:20%;color:black;overflow:hidden;background-color:#4CAF50">1</div>
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" style="width:80%;background-color:transparent;color:black;overflow:hidden">4</div></div>
+                                    <div class="progress caption" style="background-color:transparent;box-shadow:none;margin-bottom:0px;">
+                                      
+                                        <div class="progress-bar" role="progressbar" style="width:20%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">On Truck</div>
+                                        <div class="progress-bar" role="progressbar" style="width:80%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">Awaiting Pickup</div>
+                                    </div>
+                                </div>
+                                        
+                                   <div style="background-color: white;" class="">
+                        <!-- This block will be displayed if nothing found -->
+                        <div class="content-block searchbar-not-found">
+                          <div class="content-block-inner">Nothing found</div>
+                        </div>
+
+                        <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+                        <div class="list-block list-block-search searchbar-found">
+                            <ul id="courseList">
+
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a onclick="mainView.router.reloadPage('component.html')" class="item-content item-link" style="background-image: none; padding-left: 0px">
+                                                <div class="item-inner"  style="background-image: none; padding: 0px 16px">
+                                                    <div class="item-title-row">
+                                                        <div class="item-after" style="margin-left: 0px">24/04/17</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Camshaft</b></div>
+                                                    <div class="item-title-row">
+                                                        <div class="item-after">CAMS-1030</div>
+                                                        <div class="item-after">1000126202013</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout-overswipe swipeout-favorite bg-indigo forward">Read Reviews</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete swipeout-overswipe" data-confirm="Are you sure want to hide this item?" data-confirm-title="Hide?"><i class="material-icons">visibility_off</i></a>
+                                        </div>
+
+                                    </li>                            
+                                </ul>
+                        </div>
+                      </div>
+                   
+                                
+                                
+                                 </div>
+                        </a>
+
+                            </div>
+                    
+                    </div>
 
 
     
