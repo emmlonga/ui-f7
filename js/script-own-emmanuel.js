@@ -34,6 +34,7 @@ myApp.onPageInit('index', function (page) {
 myApp.onPageInit('clients', function (page) {
         // Do something here for "index" page
         console.log(page.name + ' initialized');
+        $('.tab-link-active')[0].click();
     if (c1status==1){
         console.log(page.name + ' aaaa');
         $('#1 i').toggleClass('fa fa-circle-o');
