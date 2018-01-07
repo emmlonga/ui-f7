@@ -28,7 +28,19 @@ $(document).ready(function () {
 myApp.onPageInit('index', function (page) {
         // Do something here for "index" page
         console.log(page.name + ' initialized');
-        $('.tab-link-active')[0].click()
+        $('.tab-link-active')[0].click();
+    
+    if (c1status==1){
+        console.log(page.name + ' aaaa');
+        $('#1 i').removeClass('fa fa-circle-o');
+        $('#1 i').addClass('fa fa-check-circle-o');
+        $('#1 div').css('color', '#4CAF50');
+    }
+    if (c2status==1){
+        $('#2 i').removeClass('fa fa-circle-o');
+        $('#2 i').addClass('fa fa-check-circle-o');
+        $('#2 div').css('color', '#4CAF50');
+    }
 
     })
 
@@ -101,7 +113,7 @@ myApp.onPageInit('componentb', function (page) {
         
     if (c2status==1){
         $('.maintCard').remove();
-        $('#sStat').html('On Technician <u onclick="javascript:mainView.router.loadPage(\'index2.html\')">Inventory</u>');
+        $('#sStat').html('Installed on <u onclick="javascript:mainView.router.loadPage(\'engine.html\')">Engine 10V1600</u>');
         $('#oStat').html('MTU Technical Service');
         $('#dStat').html('10/01/2018');
         console.log(page.name + ' status 0');
