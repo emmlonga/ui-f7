@@ -29,6 +29,19 @@ myApp.onPageInit('index', function (page) {
         // Do something here for "index" page
         console.log(page.name + ' initialized');
         $('.tab-link-active')[0].click();
+    
+    if (c1status==1){
+        console.log(page.name + ' aaaa');
+        $('#1 i').removeClass('fa fa-circle-o');
+        $('#1 i').addClass('fa fa-check-circle-o');
+        $('#1 div').css('color', '#4CAF50');
+    }
+    if (c2status==1){
+        $('#2 i').removeClass('fa fa-circle-o');
+        $('#2 i').addClass('fa fa-check-circle-o');
+        $('#2 div').css('color', '#4CAF50');
+    }
+
     })
 
 myApp.onPageInit('clients', function (page) {
