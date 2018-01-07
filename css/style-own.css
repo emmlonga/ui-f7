@@ -1,5 +1,8 @@
 /*Technician*/
 
+.active {
+    border-bottom: 2px solid white;
+}
 .tImg {
     width: auto;
     height: 100px;
@@ -106,7 +109,7 @@
 .cVerify{
     margin-left: 40px;
     margin-top: 16px;
-    margin-bottom: 23px;
+    margin-bottom: 11px;
 }
 
 .cTitle{
@@ -114,7 +117,7 @@
 }
 
 .cStatus{
-    margin: 20px 0px;
+    margin: 15px 0px;
 }
 
 

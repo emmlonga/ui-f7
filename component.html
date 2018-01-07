@@ -76,14 +76,13 @@
                     </div>
                      <div class="toolbar tabbar mTool">
                          <div class="toolbar-inner">
-                             <a href="#tab-1" id="t1" class="tab-link tab-link-active">Info</a>
-                             <a href="#tab-2" class="tab-link">Maintenance</a>
-                             <a href="#tab-3" class="tab-link">History</a>
+                             <a onclick="javascript:mainView.router.reloadPage('component.html')" id="t1" class="tab-link tab-link-active active">Info</a>
+                             <a onclick="javascript:mainView.router.reloadPage('component2.html')" class="tab-link">Maintenance</a>
+                             <a onclick="javascript:mainView.router.reloadPage('component3.html')" class="tab-link">History</a>
                          </div>
                     </div>
                     
-                    <div class="tabs">
-                    <div id="tab-1" class="page-content tab tab-active">
+                    <div class="page-content" style="padding-top: 56px">
                       <div class="block">
                               <div id="card-list">
                        
@@ -153,7 +152,7 @@
                                               <a href="">
                                                   <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
                                                       <div class="item-title-row">
-                                                          <div class="item-title">Status: <span>Installed on <u onclick="javascript:mainView.router.reloadPage('engine.html')">Engine 10V1600</u></span></div>
+                                                          <div class="item-title">Status: <span>Installed on <u onclick="javascript:mainView.router.loadPage('engine.html')">Engine 10V1600</u></span></div>
                                                       </div>
                                                       </div>
                                               </a>
@@ -162,9 +161,35 @@
                                     </ul>                                      
                                 </div>
                                 <div style="padding: 0px 8px">
-                                <div class="cStatus" style="margin-top: 5px;">Owner: CDTM<span></span></div>
-                                <div class="cStatus" style="margin: 20px 0px;">Installation Date: <span>24/04/2017</span></div>
-                                <div class="cStatus" style="margin-bottom: 20px;">Remaining Lifetime: <span>40 hours</span></div>
+                                <div class="cStatus" style="margin-top: 0px;">Owner: CDTM<span></span></div>
+                                <div class="cStatus" style="margin: 10px 0px;">Installation Date: <span>24/04/2017</span></div>
+                                <div class="cStatus" style="margin-bottom: 15px;">Remaining Lifetime: <span>40 hours</span></div>
+                                    </div>
+                            </div>
+                        </a>
+                                  
+                        <a href="" class="link">
+                            <div class="card demo-card-header-pic blueCard shadow--4dp" style="padding: 5px 10px; background-color: #EC192F" onclick="javascript:mainView.router.reloadPage('component2.html')">
+                                
+                            
+                                <div class="list-block attending">
+                                  <ul>
+                                      <li class="swipeout">
+                                          <div class="swipeout-content">
+                                              <a href="">
+                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
+                                                      <div class="item-title-row" style="color:white">
+                                                          <div class="item-title" > <i class="material-icons" style="font-size: 20px;position: relative;top:3px;">warning</i><b> Maintenance Alert</b></div>
+                                                      </div>
+                                                      </div>
+                                              </a>
+                                          </div>                                     
+                                      </li>
+                                    </ul>                                      
+                                </div>
+                                <div style="padding: 0px 8px; color: white;">
+                                <div class="cStatus" style="margin-top: 0px;">Scheduled Date: <span>10/01/2018</span></div>
+                                <div class="cStatus" style="margin: 15px 0px;">Reason: Recall on Batch 20302017<span></span></div>
                                     </div>
                             </div>
                         </a>
@@ -173,150 +198,6 @@
                             </div>
                       </div>
                     </div>
-                    <div id="tab-2" class="page-content tab">
-                        
-                      <div class="block">
-                        <a href="" class="link">
-                            <div class="card demo-card-header-pic blueCard" style="padding: 5px 10px">
-                                
-                            
-                                <div class="list-block attending">
-                                  <ul>
-                                      <li class="swipeout">
-                                          <div class="swipeout-content">
-                                              <a href="">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
-                                                      <div class="item-title-row">
-                                                          <div class="item-title"><b>Task: <span>Remove oil filter from engine</span></b></div>
-                                                      </div>
-                                                      </div>
-                                              </a>
-                                          </div>                                     
-                                      </li>
-                                    </ul>                                      
-                                </div>
-                                <div class="list-block accordion-list">
-                                  <ul>
-                                    <li class="accordion-item"><a href="#" class="item-content item-link">
-                                        <div class="item-inner">
-                                          <div class="item-title">Step 1: Required tools and spare parts</div>
-                                        </div>
-                                        <i class="mCheck fa fa-circle-o" aria-hidden="true"></i></a>
-                                      
-                                    </li>
-                                    <li class="accordion-item"><a href="#" class="item-content item-link">
-                                        <div class="item-inner">
-                                          <div class="item-title">Step 2: Locate Engine</div>
-                                        </div>
-                                        <i class="mCheck fa fa-circle-o" aria-hidden="true"></i></a>
-                                      <div class="accordion-item-content">
-                                        <div class="block">
-                                          <p>Engine Model: 10V1600</p>
-                                        <p>Engine Serial Number: 10322010</p>
-                                        </div>
-                                      </div>
-                                    </li>
-                                      <li class="accordion-item"><a href="#" class="item-content item-link">
-                                        <div class="item-inner">
-                                          <div class="item-title">Step 3: Locate Component</div>
-                                        </div>
-                                        <i class="mCheck fa fa-circle-o" aria-hidden="true"></i></a>
-                                      <div class="accordion-item-content">
-                                        <div class="block">
-                                          <p>Part Model: HRMW-580</p>
-                                        <p>Part Serial Number: 1000029402017</p>
-                                        </div>
-                                      </div>
-                                    </li>
-                                      <li class="accordion-item"><a href="#" class="item-content item-link">
-                                        <div class="item-inner">
-                                          <div class="item-title">Step 4: Remove Component</div>
-                                        </div>
-                                        <i class="mCheck fa fa-circle-o" aria-hidden="true"></i></a>
-                                      <div class="accordion-item-content">
-                                        <div class="block">
-                                          <p>Check user Model 10V1600 manual page 73 </p>
-                                        </div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
-                        </a>
-                          
-                        </div></div>
-                    <div id="tab-3" class="page-content tab">
-                      <div class="block">
-                        <a href="" class="link">
-                            <div class="card demo-card-header-pic blueCard" style="padding: 5px 10px">
-                                
-                            
-                                <div class="list-block attending">
-                                  <ul>
-                                      <li class="swipeout">
-                                          <div class="swipeout-content">
-                                              <a href="">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
-                                                      <div class="item-title-row">
-                                                          <div class="item-title" style="font-size: 20px; margin-bottom: 10px;">Component value chain history</div>
-                                                      </div>
-                                                      </div>
-                                                  <div class="listTitle">
-                                                            <div>Date</div>
-                                                            <div style="margin-left:-23px">Action</div>
-                                                            <div>Agent</div>
-                                                          </div>
-                                              </a>
-                                          </div>                                     
-                                      </li>
-                                    </ul>                                      
-                                </div>
-                                <div class="list-block simple-list">
-                                  <ul>
-                                    <li class="item-content" style="padding-left:0px;">
-                                        <div class="item-inner" style="padding-right: 0px;">
-                                        <div class="listItem">
-                                                <div>24/04/17</div>
-                                                <div class="listJus">Installed</div>
-                                                <div>CDTM</div>
-                                        </div>
-                                        </div>
-                                    </li>
-                                      <li class="item-content" style="padding-left:0px;">
-                                        <div class="item-inner" style="padding-right: 0px;">
-                                        <div class="listItem">
-                                                <div>24/04/17</div>
-                                                <div class="listJus">Installation</div>
-                                                <div>MTU</div>
-                                        </div>
-                                        </div>
-                                    </li>
-                                      <li class="item-content" style="padding-left:0px;">
-                                        <div class="item-inner" style="padding-right: 0px;">
-                                        <div class="listItem">
-                                                <div>13/04/17</div>
-                                                <div class="listJus">Distribution</div>
-                                                <div>K&W</div>
-                                        </div>
-                                        </div>
-                                    </li>
-                                      <li class="item-content" style="padding-left:0px;">
-                                        <div class="item-inner" style="padding-right: 0px;">
-                                        <div class="listItem">
-                                                <div>02/02/17</div>
-                                                <div class="listJus">Manufacturing</div>
-                                                <div>MTU</div>
-                                        </div>
-                                        </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
-                        </a>
-                          
-                        </div>
-                    </div>
-                  </div>
 
 
                     
@@ -333,6 +214,5 @@
     <script src="js/courses.js"></script>
     <script src="js/test.js"></script>
     <script src="js/script-own-emmanuel.js"></script>
-</body>
 
 </html>

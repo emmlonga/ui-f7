@@ -77,13 +77,12 @@
                     </div>
                     <div class="toolbar tabbar mTool">
                          <div class="toolbar-inner">
-                             <a href="#tab-1" id="t1" class="tab-link tab-link-active">Agenda</a>
-                             <a href="#tab-2" class="tab-link">Inventory</a>
+                             <a onclick="javascript:mainView.router.reloadPage('index.html')" id="t1" class="tab-link tab-link-active active">Agenda</a>
+                             <a onclick="javascript:mainView.router.reloadPage('index2.html')" class="tab-link">Inventory</a>
                          </div>
                     </div>
                     
-                    <div class="tabs">
-                    <div id="tab-1" class="page-content tab tab-active">
+                    <div class="page-content" style="padding-top: 56px">
                          <div id="card-list">
                         <!--OBLIGATORY COURSE-->
                         <!--<div style="font-size:20px; padding: 20px;">Welcome Adam</div>-->
@@ -105,7 +104,7 @@
                         <a href="" class="link">
                             <div class="card demo-card-header-pic blueCard" style="padding-bottom: 10px">
                                 <div class="card-header cardEdit color-black no-border">
-                                    <span>Schedule</span><button class="button" style="color: black; border: 1px solid white;border-radius: 3px; margin-right: -5px"><i style="position: relative;top:4px;font-size: 20px" class="material-icons">date_range</i><span style="font-size: 15px"> 07/01</button></span>
+                                    <span>Schedule</span><button class="button" style="color: black; border: 1px solid white;border-radius: 3px; margin-right: -5px"><i style="position: relative;top:4px;font-size: 20px" class="material-icons">date_range</i><span style="font-size: 15px"> 10/01/2018</button></span>
                                 </div>
                                 <div class="list-block attending">
                                   <ul>
@@ -136,7 +135,7 @@
                                       </li>
                                       <li class="swipeout">
                                           <div class="swipeout-content">
-                                              <a onclick="javascript:mainView.router.reloadPage('client.html')">
+                                              <a onclick="javascript:mainView.router.loadPage('client.html')">
                                                   <div class="item-inner" style="margin:0px 8px;justify-content: normal">
                                                       <div class="item-subtitle" style="margin-right: 15px">
                                                           <div class="item-title" style="padding-left: 6px">11:00</div>
@@ -192,44 +191,6 @@
                             
                             </div>
                        </div>
-                    <div id="tab-2" class="page-content tab">
-                      <div id="card-list">
-                        <!--OBLIGATORY COURSE-->
-                        <!--<div style="font-size:20px; padding: 20px;">Welcome Adam</div>-->
-                                               
-                            <a href="detailedCourseView.html" class="link">
-                            <div class="card demo-card-header-pic blueCard">
-                                <div class="card-header cardEdit color-black no-border">
-                                    <span>Your Inventory</span>
-                                </div>
-                                <div class="cardSubtitle">Outgoing Pieces
-                                    <div class="progress" style="margin:6px 0px 0px 0px;">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" style="width:80%;color:black;overflow:hidden;background-color:#2E7D32">8</div>
-                                        <div class="progress-bar progress-bar-info" role="progressbar" style="width:20%;color:black;overflow:hidden;background-color:#4CAF50">2</div>
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" style="width:44.11764705882353%;background-color:transparent;color:black;overflow:hidden">0</div></div>
-                                    <div class="progress caption" style="background-color:transparent;box-shadow:none;margin-bottom:0px;">
-                                        <div class="progress-bar" role="progressbar" style="width:80%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">Installed</div>
-                                        <div class="progress-bar" role="progressbar" style="width:20%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">On Truck</div>
-                                        <div class="progress-bar" role="progressbar" style="width:44.11764705882353%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">Awaiting Pickup</div>
-                                    </div>
-                                </div>
-                                <div class="cardSubtitle">Incoming Pieces
-                                    <div class="progress" style="margin:6px 0px 0px 0px;">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" style="width:23.52941176470588%;color:black;overflow:hidden;background-color:#2E7D32">8</div>
-                                        <div class="progress-bar progress-bar-info" role="progressbar" style="width:32.35294117647059%;color:black;overflow:hidden;background-color:#4CAF50">11</div>
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" style="width:44.11764705882353%;background-color:transparent;color:black;overflow:hidden">15</div></div>
-                                    <div class="progress caption" style="background-color:transparent;box-shadow:none;margin-bottom:0px;">
-                                        <div class="progress-bar" role="progressbar" style="width:23.52941176470588%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">Returned</div>
-                                        <div class="progress-bar" role="progressbar" style="width:32.35294117647059%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">On Truck</div>
-                                        <div class="progress-bar" role="progressbar" style="width:44.11764705882353%;background-color:transparent;box-shadow:none;overflow:hidden;text-overflow: ellipsis">Awaiting Pickup</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                            </div>
-                    </div>
-                  </div>
 
 
     
