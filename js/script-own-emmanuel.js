@@ -145,10 +145,21 @@ myApp.onPageInit('componentb3', function (page) {
 myApp.onPageInit('engine', function (page) {
         // Do something here for "index" page
         console.log(page.name + ' initialized');
-    $('.tab-link-active')[0].click()
+    if (c2status==1){
+        $('.maintCard').remove();
+    }
     })
 
-
+myApp.onPageInit('engine3', function (page) {
+        // Do something here for "index" page
+        console.log(page.name + ' initialized');
+        if (c1status==1) {
+            $("#lUl").prepend('<li class="item-content" style="padding-left:0px;" onclick="javascript:mainView.router.reloadPage(\'componentb.html\')"><div class="item-inner" style="padding-right: 0px;">                                            <div style="color:#EC192F; font-size: 14px"><i class="material-icons">arrow_downward</i></div>                                        <div class="listItem"><div>24/04/17</div><div class="listJus">Oil Filter</div><div>MTU</div></div></div></li>');
+        }
+        if (c2status==1) {
+            $("#lUl").prepend('<li class="item-content" style="padding-left:0px;" onclick="javascript:mainView.router.reloadPage(\'component.html\')"><div class="item-inner" style="padding-right: 0px;">                                            <div style="color:#263884; font-size: 14px"><i class="material-icons">arrow_upward</i></div>                                        <div class="listItem"><div>24/04/17</div><div class="listJus">Oil Filter</div><div>MTU</div></div></div></li>');
+        }
+    })
 
 
     /*rateCourseReview*/

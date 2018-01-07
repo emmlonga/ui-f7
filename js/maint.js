@@ -66,12 +66,27 @@ var Cb ={
 }
 
 //JQuery functions//
+
+//Component3//
 function convDate (project) {
     var date = new Date(project);
-    var nd =  ('0'+ date.getDate()).slice(-2) + '/' + ('0'+(date.getMonth() + 1)).slice(-2) + '/' +  date.getFullYear();
+    var nd =  ('0'+ date.getDate()).slice(-2) + '/' + ('0'+(date.getMonth() + 1)).slice(-2) + '/' + ('0'+ date.getFullYear()).slice(-2);
     return nd
 }
 
+function createHis (offer) {
+    var hisEle = '<li class="item-content" style="padding-left:0px;"><div class="item-inner" style="padding-right: 0px;"><div class="listItem">                                                <div>'+convDate(offer.date)+'</div><div class="listJus">'+offer.action+'</div><div>'+offer.name+'</div></div></div></li>'
+    return hisEle;
+}
+
+function listHis (type) {
+    $("#lUl").empty();
+    for (i in type.transactions) {
+        $(createHis(type.transactions[i])).appendTo("#lUl")
+    }
+}
+
+//Engine 3//
 function createHis (offer) {
     var hisEle = '<li class="item-content" style="padding-left:0px;"><div class="item-inner" style="padding-right: 0px;"><div class="listItem">                                                <div>'+convDate(offer.date)+'</div><div class="listJus">'+offer.action+'</div><div>'+offer.name+'</div></div></div></li>'
     return hisEle;
