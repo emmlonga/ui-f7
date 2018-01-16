@@ -1,3 +1,16 @@
+var root = 'https://jsonplaceholder.typicode.com';
+
+$.ajax({
+  url: root + '/posts/',
+  method: 'GET'
+}).then(function(data) {
+  saveData(data);
+});
+
+function saveData (data){
+    yikes = data;
+}
+
 var H1 = {
     id: "dunno",
     name: "CDTM",
