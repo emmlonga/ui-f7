@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+
+    <title>Your App Name</title>
+
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.css">
+
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+
+    <!-- embed jquery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--Path to own CSS SHEET-->
+    <link rel="stylesheet" href="css/style-own.css">
+    <link rel="stylesheet" href="css/circle.css">
+    
+        <!--Framework 7 icons-->
+    <link rel="stylesheet" href="lib/Framework7-Icons-master/css/framework7-icons.css">
+    
+    <!-- Material IO icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            
+    <!-- CSS FLAGS-->
+    <link rel="stylesheet" href="lib/flag-icon-css-master/css/flag-icon.css">
+    
+    <!--Bootstrap script for the progressbar-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+
+</head>
+
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+
+    <!--THIS IS THE STATUSBAR-->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed" >
+                <div data-page="engine2" class="page" style="padding-top: 48px;background: #f5f6f7;">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+                            <div class="left">
+                                <a onclick="javascript:mainView.router.back()" class="link icon-only" id="backGeneral">
+                                    <i class="icon icon-back"></i>
+                                </a>
+                            </div>
+                            <div class="center">Engine Overview</div>
+                            <div class="right">
+                                <i onclick="javascript:mainView.router.loadPage('index.html')" class="material-icons">home</i>
+                                <a href="#" class="link icon-only" onclick="createPopover()">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                     <div class="toolbar tabbar mTool">
+                         <div class="toolbar-inner">
+                             <a onclick="javascript:mainView.router.reloadPage('engine.html')" id="t1" class="tab-link">Info</a>
+                             <a onclick="javascript:mainView.router.reloadPage('engine2.html')" class="tab-link tab-link-active active">Components</a>
+                             <a onclick="javascript:mainView.router.reloadPage('engine3.html')" class="tab-link">History</a>
+                         </div>
+                    </div>
+                    
+                   
+                    <div class="page-content" style="padding-top: 56px">
+                      <form data-search-list=".list-block-search" data-search-in=".item-inner" class="searchbar searchbar-init" style="background-color:#343048">
+                        <div class="searchbar-input">
+                          <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+                        </div>
+                        <a href="#" data-picker=".picker-1" class="open-picker link icon-only">
+                            <i class="icon fa fa-filter" aria-hidden="true"></i>
+                                </a>
+                        <a href="#" data-picker=".picker-2" class="open-picker link icon-only">
+                            <i class="icon fa fa-sort" aria-hidden="true"></i>
+                                </a>
+                      </form>
+                        
+                     <div style="background-color: white;" class="">
+                        <!-- This block will be displayed if nothing found -->
+                        <div class="content-block searchbar-not-found">
+                          <div class="content-block-inner">Nothing found</div>
+                        </div>
+
+                        <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+                        <div class="list-block list-block-search searchbar-found">
+                            <ul id="courseList">
+
+                                    <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a onclick="mainView.router.reloadPage('component.html')" class="item-content item-link" style="background-image: none; padding-left: 0px">
+                                                <div class="item-inner"  style="background-image: none; padding: 0px 16px">
+                                                    <div class="item-title-row">
+                                                        <div class="item-after" style="margin-left: 0px">24/04/17</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Oil Filter</b></div>
+                                                    <div class="item-title-row">
+                                                        <div class="item-after">HRMW-580</div>
+                                                        <div class="item-after">1000029402017</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swipeout-actions-right">
+                                            <a href="#" class="swipeout-overswipe swipeout-favorite bg-indigo forward">Read Reviews</a>
+                                        </div>
+                                        <div class="swipeout-actions-left">
+                                            <a href="#" class="swipeout-delete swipeout-overswipe" data-confirm="Are you sure want to hide this item?" data-confirm-title="Hide?"><i class="material-icons">visibility_off</i></a>
+                                        </div>
+
+                                    </li>
+                                
+                                
+                                </ul>
+                        </div>
+                      </div>
+                        </div> 
+                </div>
+
+
+                    
+                    </div>
+            </div>
+        </div>
+
+    </div>
+     
+</body>
+    
+    <!--Our javascript script-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/script-own-emmanuel.js"></script>
+</body>
+
+</html>
