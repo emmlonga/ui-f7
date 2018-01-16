@@ -5,7 +5,6 @@ var user = {
 
 
 
-
 var reviewCards = {
     count: 4,
 }
