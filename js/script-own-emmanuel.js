@@ -65,6 +65,14 @@ myApp.onPageInit('component', function (page) {
 myApp.onPageInit('component2', function (page) {
         // Do something here for "index" page
     console.log(page.name + ' initialized');
+     window.setInterval(function(){
+        $.ajax({
+          url: 'http://localhost:3000/comments',
+          method: 'GET'
+        }).then(function(data) {
+            componentRemoved(data[0]);
+        });
+    }, 500);
     $('.mCheck').click(function(){
         $(this).toggleClass('fa fa-circle-o');
         $(this).toggleClass('fa fa-check-circle-o');
@@ -88,7 +96,16 @@ myApp.onPageInit('component2', function (page) {
 myApp.onPageInit('component3', function (page) {
         // Do something here for "index" page
     console.log(page.name + ' initialized');
-    listHis(C);
+    lHis(dummy);
+    window.setInterval(function(){
+        $.ajax({
+          url: 'http://localhost:3000/posts',
+          method: 'GET'
+        }).then(function(data) {
+            lHis(data);
+        });
+    }, 500);
+
     
     if (c1status==1){
         $("#lUl").prepend('<li class="item-content" style="padding-left:0px;"><div class="item-inner" style="padding-right: 0px;"><div class="listItem">                                                <div>10/01/2018</div><div class="listJus">Removed</div><div>MTU</div></div></div></li>');

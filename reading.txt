@@ -1,0 +1,38 @@
+[
+  {
+    "$class": "org.brix.Component",
+    "componentId": "129244889",
+    "name": "Oil Filter",
+    "owner": "resource:org.brix.Owner#andre",
+    "batchNumber":"029304839",
+    "date": "2018-01-16T20:47:01.756Z",
+    "status": "CREATED"
+  },
+    {
+    "$class": "org.brix.Component",
+    "componentId": "129244889",
+    "name": "Camshaft",
+    "owner": "resource:org.brix.Owner#andre",
+    "batchNumber":"029304839",
+    "date": "2018-01-16T20:46:01.756Z",
+    "status": "CREATED"
+  },
+{
+    "$class": "org.brix.Component",
+    "componentId": "129244889",
+    "name": "Oil Friends",
+    "owner": "resource:org.brix.Owner#andre",
+    "batchNumber":"029304839",
+    "date": "2018-01-16T20:45:01.756Z",
+    "status": "CREATED"
+  },
+{
+    "$class": "org.brix.Component",
+    "componentId": "129244889",
+    "name": "Whatever",
+    "owner": "resource:org.brix.Owner#andre",
+    "batchNumber":"029304839",
+    "date": "2018-01-16T20:45:01.756Z",
+    "status": "CREATED"
+  }
+]
