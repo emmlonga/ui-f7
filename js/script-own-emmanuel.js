@@ -67,16 +67,12 @@ myApp.onPageInit('component2', function (page) {
     console.log(page.name + ' initialized');
      window.setInterval(function(){
         $.ajax({
-          url: 'http://localhost:3000/comments',
+          url: 'http://localhost:3000/engine',
           method: 'GET'
         }).then(function(data) {
             componentRemoved(data[0]);
         });
-    }, 500);
-    $('.mCheck').click(function(){
-        $(this).toggleClass('fa fa-circle-o');
-        $(this).toggleClass('fa fa-check-circle-o');
-    });
+    }, 5000);
     
     if (c1status==1){
         $('.blueCard .accordion-list').remove();
@@ -96,20 +92,16 @@ myApp.onPageInit('component2', function (page) {
 myApp.onPageInit('component3', function (page) {
         // Do something here for "index" page
     console.log(page.name + ' initialized');
-    lHis(dummy);
-    window.setInterval(function(){
-        $.ajax({
-          url: 'http://localhost:3000/posts',
+    $.ajax({
+          url: 'http://localhost:3000/componenttransaction',
           method: 'GET'
         }).then(function(data) {
-            lHis(data);
+            //lHis(filterComponentTransaction(parseComponentTransaction(data),"comp1"));
         });
-    }, 500);
-
-    
     if (c1status==1){
-        $("#lUl").prepend('<li class="item-content" style="padding-left:0px;"><div class="item-inner" style="padding-right: 0px;"><div class="listItem">                                                <div>10/01/2018</div><div class="listJus">Removed</div><div>MTU</div></div></div></li>');
-    }    
+        $("#lUl").prepend('<li class="item-content" style="padding-left:0px;"><div class="item-inner" style="padding-right: 0px;"><div class="listItem">                                                <div>10/01/18</div><div class="listJus">Demounted</div><div>MTU</div></div></div></li>');
+    }
+    //lHis(dummy);
     })
 
 myApp.onPageInit('componentb', function (page) {
@@ -129,10 +121,14 @@ myApp.onPageInit('componentb', function (page) {
 myApp.onPageInit('componentb2', function (page) {
         // Do something here for "index" page
     console.log(page.name + ' initialized');
-    $('.mCheck').click(function(){
-        $(this).toggleClass('fa fa-circle-o');
-        $(this).toggleClass('fa fa-check-circle-o');
-    });
+    window.setInterval(function(){
+        $.ajax({
+          url: 'http://localhost:3000/engine',
+          method: 'GET'
+        }).then(function(data) {
+            componentAdded(data[0]);
+        });
+    }, 5000);
     
     if (c2status==1){
         $('.blueCard .accordion-list').remove();
@@ -155,7 +151,7 @@ myApp.onPageInit('componentb3', function (page) {
     listHis(Cb);
     
     if (c2status==1){
-        $("#lUl").prepend('<li class="item-content" style="padding-left:0px;"><div class="item-inner" style="padding-right: 0px;"><div class="listItem">                                                <div>10/01/2018</div><div class="listJus">Installed</div><div>CDTM</div></div></div></li>');
+        $("#lUl").prepend('<li class="item-content" style="padding-left:0px;"><div class="item-inner" style="padding-right: 0px;"><div class="listItem">                                                <div>10/01/18</div><div class="listJus">Installed</div><div>CDTM</div></div></div></li>');
     }    
     })
 
