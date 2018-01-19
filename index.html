@@ -65,7 +65,7 @@
                                     <img src="Images/MTU_Friedrichshafen_logo.svg.png" width="50" alt="" class="">
                                 </a>
                             </div>
-                            <div class="center">Technician Overview</div>
+                            <div class="center">Maintenance Service</div>
                             <div class="right">
                                 <a href="#" class="link icon-only" onclick="createPopover()">
                                     <i class="fa fa-ellipsis-v"></i>
@@ -76,116 +76,48 @@
                         <div class="videoBar"></div>
                         <div class="navCaption"></div>
                     </div>
-                    <div class="toolbar tabbar mTool">
-                         <div class="toolbar-inner">
-                             <a onclick="javascript:mainView.router.reloadPage('index.html')" id="t1" class="tab-link tab-link-active active">Agenda</a>
-                             <a onclick="javascript:mainView.router.reloadPage('index2.html')" class="tab-link">Inventory</a>
-                         </div>
-                    </div>
-                    
-                    <div class="page-content" style="padding-top: 56px">
+                 
+                    <div class="page-content" style="padding-top: 10px">
                          <div id="card-list">
                         <!--OBLIGATORY COURSE-->
                         <!--<div style="font-size:20px; padding: 20px;">Welcome Adam</div>-->
                          <a href="" class="link">
                             <div class="card demo-card-header-pic blueCard" style="padding: 8px 0px">
                             
-                                <div class="tImgDiv shadow--2dp" style="margin-bottom: 8px;"><img class="tImg"  style=""  src="Images/adam.png"></div>
+                                <div class="tImgDiv shadow--4dp" style="margin-bottom: 7px;"><img class="tImg"  style=""  src="Images/adam.png"></div>
                                 
                                 <div class="tInfo">
                                 <div class="cTitle">Welcome Franz D.</div>
-                                <div class="tStatus" style="margin-top: 8px;">MTU Service Technician</div>
-                                <div class="tStatus" style="">You have <span>8</span> pending tasks for today</div>
+                                <div class="tStatus" style="margin-top: 8px; font-size: 18px">MTU Service Technician</div>
                                 </div>
                                 </div>
                                 
                            
                         </a>    
                     
-                        <a href="" class="link">
-                            <div class="card demo-card-header-pic blueCard" style="padding-bottom: 10px">
+                        <a href="engine.html" class="link">
+                            <div class="card demo-card-header-pic blueCard shadow--2dp" style="padding-bottom: 10px">
                                 <div class="card-header cardEdit color-black no-border">
-                                    <span>Schedule</span><button class="button" style="color: black; border: 1px solid white;border-radius: 3px; margin-right: -5px"><i style="position: relative;top:4px;font-size: 20px" class="material-icons">date_range</i><span style="font-size: 15px"> 10/01/2018</button></span>
+                                    <span style="font-size: 20px">Task Schedule</span><button class="button" style="color: black; border: 1px solid white;border-radius: 3px; margin-right: -5px"><i style="position: relative;top:4px;font-size: 20px" class="material-icons">date_range</i><span style="font-size: 17px"> 10/01/18</button></span>
                                 </div>
-                                <div class="list-block attending">
-                                  <ul>
-                                      <li class="swipeout">
-                                          <div class="swipeout-content">
-                                              <a href="">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal">
-                                                      <div class="item-subtitle" style="margin-right: 15px">
-                                                          <div class="item-title" style="padding-left: 6px">09:00</div>
-                                                      </div>
-                                                      <div class="item-title-row" style="width: 170px">
-                                                          <div class="item-title"><b>DCPowerSystems AG </b></div>
-                                                          <div class="item-after" style="margin-left: 0px">Gaswerkstrasse 6</div>
-                                                      </div>
-                                                      <div><div class="item-text" style="margin: 0px 7px">
-                                                          <span style="margin-left: 5px;">Complete</span>
-                                                          <div class="c100 p100 big" style="font-size:20px">
-                                                              <div class="slice">
-                                                                <div class="bar"></div>
-                                                                <div class="fill"></div>
-                                                              </div>
-                                                            </div>
-                                                      </div>
-                                                      </div>
-                                                  </div>
-                                              </a>
-                                          </div>                                     
-                                      </li>
-                                      <li class="swipeout">
-                                          <div class="swipeout-content">
-                                              <a onclick="javascript:mainView.router.loadPage('client.html')">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal">
-                                                      <div class="item-subtitle" style="margin-right: 15px">
-                                                          <div class="item-title" style="padding-left: 6px">11:00</div>
-                                                      </div>
-                                                      <div class="item-title-row" style="width: 170px">
-                                                          <div class="item-title"><b>CDTM</b></div>
-                                                          <div class="item-after" style="margin-left: 0px">Marsstr. 21</div>
-                                                      </div>
-                                                      <div><div class="item-text" style="margin: 0px 7px">
-                                                          <span style="margin-left: 5px;">2 Tasks</span>
-                                                          <div class="c100 p0 big" style="font-size:20px">
-                                                              <div class="slice">
-                                                                <div class="bar"></div>
-                                                                <div class="fill"></div>
-                                                              </div>
-                                                            </div>
-                                                      </div>
-                                                      </div>
-                                                  </div>
-                                              </a>
-                                          </div>                                     
-                                      </li>
-                                      <li class="swipeout">
-                                          <div class="swipeout-content">
-                                              <a href="">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal">
-                                                      <div class="item-subtitle" style="margin-right: 15px">
-                                                          <div class="item-title" style="padding-left: 6px">15:00</div>
-                                                      </div>
-                                                      <div class="item-title-row" style="width: 170px">
-                                                          <div class="item-title"><b>Schiffsdieseltechnik Kiel GmbH<</b></div>
-                                                          <div class="item-after" style="margin-left: 0px">Kanalweg 6</div>
-                                                      </div>
-                                                      <div><div class="item-text" style="margin: 0px 7px">
-                                                          <span style="margin-left: 5px;">6 Tasks</span>
-                                                          <div class="c100 p0 big" style="font-size:20px">
-                                                              <div class="slice">
-                                                                <div class="bar"></div>
-                                                                <div class="fill"></div>
-                                                              </div>
-                                                            </div>
-                                                      </div>
-                                                      </div>
-                                                  </div>
-                                              </a>
-                                          </div>                                     
-                                      </li>
-                                  </ul>
+                                <div style="position: relative">
+                                 <div class="rImgDiv"><div class="rBorder "></div><img class="" src="Images/tools.png"></div>
+                                <div class="rInfo">
+                                    <div style="font-weight:550">Maintenance on Engine 10V1600</div>
+                                    <div>Replace Oil Filter HRMW-580</div>
+                                    <div>Reason: Recall on Batch 20302017</div>
                                 </div>
+                                </div>
+                                
+                                <div style="position: relative">
+                                    <div class="lImgDiv"><div class="lBorder shadow--1dp"></div><img src="Images/map4.png"></div>
+                                <div class="lInfo">
+                                    <div>Owner: CDTM</div>
+                                    <div>Location: Marsstr. 20</div>
+                                </div>
+                                </div>
+                                <i class="material-icons rArrow" style="font-size: 24px">keyboard_arrow_right</i>
+                               
                             </div>
                         </a>
                             

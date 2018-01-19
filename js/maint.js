@@ -166,8 +166,14 @@ function callbackOk () {
     console.log("okk");
     
     c1status=1
+    setTimeout(function() {
+    $("#removeMe").remove();
+    $("#maAlert").html(" Missing Component Detected");
+    $("#maMessage").html("Please install Oil Filter")
     $('.blueCard .accordion-list').remove();
     $('.mTask').html('No maintenance task available');
+    $("#running").html(" Idle");
+       }, 1500);
 }
 
 function callbackCancel () {
@@ -187,9 +193,13 @@ function componentRemoved (engine) {
 function callbackOk2 () {
     mountComponent(engines[0].newComponents[0],engines[0].engineId);
     console.log("ok");
-    c2status=1
-    $('.blueCard .accordion-list').remove();
-    $('.mTask').html('No maintenance task available');
+    c2status=1;
+    setTimeout(function() {
+             //myApp.alert("","Maintenance Successful")
+    $("#courseList").prepend(createOil());
+    $(".maintCard").remove();
+        $("#running").html(" Running");
+       }, 1500);
 }
 
 function callbackCancel2 () {
@@ -232,4 +242,9 @@ function listHis (type) {
     }
 }
 
+
+function createOil (){
+    var Oil = '<li class="swipeout"><div class="swipeout-content"><a onclick="mainView.router.reloadPage(\'componentb.html\')" class="item-content item-link" style="background-image: none; padding-left: 0px"><div class="item-inner"  style="background-image: none; padding: 0px 8px"><div class="item-title-row"><div class="item-after" style="margin-left: 0px">19/07/16</div></div><div class="item-subtitle"><b>Oil Filter</b></div>  <div class="item-title-row"><div style="text-align: right; justify-content: flex-end" class="item-after">HRMW-580</div><div class="item-after">1003429411017</div></div></div></a></div></li>'
+    return Oil;
+}
 

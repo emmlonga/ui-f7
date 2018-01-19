@@ -32,7 +32,6 @@ myApp.onPageInit('about', function (page) {
     /** App initialization**/
 $(document).ready(function () {
     console.log("App is initialized");
-    $('.tab-link-active')[0].click();
     c1status=0;
     c2status=0;
     window.setInterval(function(){
@@ -53,13 +52,11 @@ $(document).ready(function () {
 myApp.onPageInit('index', function (page) {
         // Do something here for "index" page
         console.log(page.name + ' initialized');
-        $('.tab-link-active')[0].click();
     })
 
 myApp.onPageInit('clients', function (page) {
         // Do something here for "index" page
         console.log(page.name + ' initialized');
-        $('.tab-link-active')[0].click();
     if (c1status==1){
         console.log(page.name + ' aaaa');
         $('#1 i').toggleClass('fa fa-circle-o');
@@ -90,9 +87,13 @@ myApp.onPageInit('component', function (page) {
 myApp.onPageInit('component2', function (page) {
         // Do something here for "index" page
     console.log(page.name + ' initialized');
-     window.setInterval(function(){
+     var interval1= setInterval(function(){
+         console.log("oi");
         demountCall();
-    }, 5000);
+         if (c1status==1){
+             clearInterval(interval1);
+         }
+    }, 500);
     
     if (c1status==1){
         $('.blueCard .accordion-list').remove();
@@ -146,8 +147,11 @@ myApp.onPageInit('componentb', function (page) {
 myApp.onPageInit('componentb2', function (page) {
         // Do something here for "index" page
     console.log(page.name + ' initialized');
-    interval = window.setInterval(function(){
+    var interval2 = window.setInterval(function(){
         mountCall();
+        if (c2status==1){
+            clearInterval(interval2);
+        }
     }, 5000);
     if (c2status==1){
         $('.blueCard .accordion-list').remove();
@@ -181,8 +185,19 @@ myApp.onPageInit('componentb3', function (page) {
 myApp.onPageInit('engine', function (page) {
         // Do something here for "index" page
         console.log(page.name + ' initialized');
-    if (c2status==1){
-        $('.maintCard').remove();
+    console.log(page.name + ' initialized');
+     var interval1= setInterval(function(){
+         console.log("oi");
+        demountCall();
+         if (c1status==1){
+             setTimeout(function() {
+            mountCall();
+       }, 5000); 
+         }
+    }, 500);
+    
+    if (c1status==1){
+        
     }
     })
 
@@ -470,198 +485,3 @@ function convDate (date){
 
 
 /**NEW STARTS HERE**/
-
-
-
-
-
-//*OLD*//
-
-// Open Links popover
-function createPopover() {
-    var a = -1;
-    var popoverHTML = '<div class="popover popover-links">' + '<div class="popover-inner">' + '<div class="list-block">' + '<ul>' + '<li onclick="printNumber(' + "-1" + ');listCourseElement(' + "all_Courses" + ')"><a href="detailedCourseView.html" class="item-link list-button close-popover">My Courses</li>' + '<li><a href="#" class="item-link list-button">My Ratings</li>' + '<li><a href="#" class="item-link list-button">Sign out</li>' + '</ul>' + '</div>' + '</div>' + '</div>';
-    myApp.popover(popoverHTML, ".fa-ellipsis-v");
-    $(".popover-links").attr("style", "display:block; width:160px; top:56px; right: 6px");
-}
-
-/*Compare functions*/
-function compareAlphabetical(a, b) {
-    if (b.name > a.name) {
-        return -1;
-    }
-    else if (b.name < a.name) {
-        return 1;
-    }
-    else {
-        return 0
-    }
-}
-
-function compareECTS(a, b) {
-    return (b.ECTS - a.ECTS)
-}
-
-function compareLanguage(a, b) {
-    if (b.language > a.language) {
-        return -1;
-    }
-    else if (b.language < a.language) {
-        return 1;
-    }
-    else {
-        return 0
-    }
-}
-
-function compareRating(a, b) {
-    return (b.rating - a.rating)
-}
-
-function compareFavorites(a, b) {
-    if (a.starred & !b.starred) {
-        return -1;
-    }
-    else if (!a.starred & b.starred) {
-        return 1;
-    }
-    else {
-        return 0
-    }
-}
-/*COURSE REVIEW*/
-//function Rating(text) {
-// copy my location
-//this.createdBy = user.name;
-//this.createdOn = new Date() //now
-//this.text = text;
-//this.comment = "HELLO"
-//this.
-// own message
-//this.own = true;}
-//
-/*Slider scales*/
-function scaleRating(value) {
-    var qualityName = {};
-    if (value == 0) {
-        qualityName = "very bad";
-        x = "0";
-    }
-    else if (value == 1) {
-        qualityName = "bad";
-        x = "1";
-    }
-    else if (value == 2) {
-        qualityName = "average";
-        x = "2";
-    }
-    else if (value == 3) {
-        qualityName = "good";
-        x = "3";
-    }
-    else if (value == 4) {
-        qualityName = "very good";
-        x = "4";
-    }
-    return qualityName, x
-}
-
-function filterECTS(value) {
-    var lim = parseInt(myApp.formToData("#filterForm").ECTS)
-    if (myApp.formToData("#filterForm").limit == "equal") {
-        return value.ECTS == lim;
-    }
-    else {
-        return value.ECTS >= lim;
-    }
-}
-
-function filterRating(value) {
-    var lim = parseInt(myApp.formToData("#filterForm").Rating)
-    return value.rating >= lim;
-}
-
-function filterLanguage(value) {
-    var lim = myApp.formToData("#filterForm").Language;
-    if (lim == "all") {
-        return value.language;
-    }
-    else {
-        return value.language == lim;
-    }
-}
-
-function filterFavorites(value) {
-    var lim = myApp.formToData("#filterForm").viewFavorites[0];
-    if (lim == "yes") {
-        return value.starred == lim;
-    }
-    else {
-        return value.starred;
-    }
-}
-
-function filterAttended() {
-    var lim = myApp.formToData("#filterForm").hideAttended[0];
-    if (lim == "yes") {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-
-function filterList(asa) {
-    var inner = selectedNumber;
-    if (inner == -1) {
-        inner = 0
-    };
-    var a = asa[inner][2];
-    var a = a.filter(filterECTS);
-    var a = a.filter(filterLanguage);
-    var a = a.filter(filterFavorites);
-    var a = a.filter(filterRating);
-    i = asa.length;
-    b = Array(i);
-    while (i--) {
-        if (i == inner) {
-            b[i] = [0, 1, 2];
-            b[i][0] = asa[i][0];
-            b[i][1] = asa[i][1];
-            b[i][2] = a;
-        }
-        else {
-            b[i] = asa[i];
-        };
-    }
-    return b
-}
-
-function resetFilter(id) {
-    $(id).each(function () {
-        this.reset();
-    });
-}
-//*SWIPING OUT COMMANDS*//
-function LoadCommand() {
-    $$('.swipeout-actions-right').on('opened', function () {
-        myApp.alert('Item removed');
-    });
-}
-
-function makeFavorite(b) {
-    if (b.starred == "no") {
-        b.starred = "yes";
-        console.log(b.name + " is now Favorite");
-    }
-    else {
-        b.starred = "no";
-        console.log(b.name + " is no longer Favorite");
-    }
-    listListElement(filterList(degree_Ergonomics), myApp.formToData('#sortForm').myradio);
-}
-
-function storeIndex(b) {
-    currentCourse = b;
-}

@@ -75,15 +75,9 @@
                         </div>
                         
                     </div>
-                     <div class="toolbar tabbar mTool">
-                         <div class="toolbar-inner">
-                             <a onclick="javascript:mainView.router.reloadPage('componentb.html')" id="t1" class="tab-link tab-link-active active">Info</a>
-                             <a onclick="javascript:mainView.router.reloadPage('componentb2.html')" class="tab-link">Maintenance</a>
-                             <a onclick="javascript:mainView.router.reloadPage('componentb3.html')" class="tab-link">History</a>
-                         </div>
-                    </div>
+                     
                     
-                    <div class="page-content" style="padding-top: 56px">
+                    <div class="page-content" style="padding-top: 10px">
                       <div class="block">
                               <div id="card-list">
                        
@@ -91,17 +85,19 @@
                             <div class="card demo-card-header-pic blueCard" style="padding: 8px 0px">
                             
                                 <div class="spImgDiv shadow--2dp"><img class="spImg"  style=""  src="Images/oilfilter.jpg"></div>
-                                <i class="material-icons spVer" style="font-size: 35px">verified_user</i>
+                                <i class="material-icons spVer" style="font-size: 40px">verified_user</i>
                                 
                                 <div class="cInfo">
                                 <div class="cTitle">Oil Filter HRMW-580</div>
-                                <div class="cStatus" style="margin-top: 15px;">Serial Number: 1003429411017<span></span></div>
+                                <div class="cStatus" style="margin-top: 5px;">Serial Number: 1003429411017<span></span></div>
                                 <div class="cStatus">Batch Number: <span>23402017</span></div>
                                 <div class="cStatus">Production Date: <span>20/11/2017</span></div>
+                                <div class="cStatus">Owner: <span>CDTM</span></div>
                                 
                                 </div>
                                 <div class="cVerify" style="color:#263884;"><div><span>Verified</span></div>
                                 </div>
+                                <i class="material-icons rArrow" style="font-size: 24px">info_outline</i>
                                 
                             <!--<div class="list-block attending" style="padding: 0px 10px">
                                 <ul>
@@ -142,8 +138,10 @@
                                 </div>-->
                             </div>
                         </a>
+                       
+                                  
                         <a href="" class="link">
-                            <div class="card demo-card-header-pic blueCard statCard" style="padding: 5px 10px">
+                            <div class="card demo-card-header-pic blueCard" style="padding: 5px 10px">
                                 
                             
                                 <div class="list-block attending">
@@ -153,45 +151,59 @@
                                               <a href="">
                                                   <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
                                                       <div class="item-title-row">
-                                                          <div class="item-title">Status: <span id="sStat">On Technician <u onclick="javascript:mainView.router.loadPage('index2.html')">Inventory</u></span></div>
+                                                          <div class="item-title" style="font-size: 20px; margin-bottom: 10px;">Component value chain history</div>
                                                       </div>
                                                       </div>
+                                                  <div class="listTitle">
+                                                            <div>Date</div>
+                                                            <div style="margin-left:-23px">Action</div>
+                                                            <div>Agent</div>
+                                                          </div>
                                               </a>
                                           </div>                                     
                                       </li>
                                     </ul>                                      
                                 </div>
-                                <div style="padding: 0px 8px">
-                                <div class="cStatus" style="margin-top: 0px;">Owner: <span id="oStat">MTU Technical Service</span></div>
-                                <div class="cStatus" style="margin: 10px 0px;">Last Activity: <span id="dStat">10/01/2017</span></div>
-                                <div class="cStatus" style="margin-bottom: 15px;">Remaining Lifetime: <span>8000 hours</span></div>
-                                    </div>
-                            </div>
-                        </a>
-                                  
-                        <a href="" class="link">
-                            <div class="card demo-card-header-pic blueCard shadow--4dp maintCard" style="padding: 5px 10px; background-color: #EC192F" onclick="javascript:mainView.router.reloadPage('componentb2.html')">
-                                
-                            
-                                <div class="list-block attending">
-                                  <ul>
-                                      <li class="swipeout">
-                                          <div class="swipeout-content">
-                                              <a href="">
-                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
-                                                      <div class="item-title-row" style="color:white">
-                                                          <div class="item-title" > <i class="material-icons" style="font-size: 20px;position: relative;top:3px;">warning</i><b> Maintenance Alert</b></div>
-                                                      </div>
-                                                      </div>
-                                              </a>
-                                          </div>                                     
-                                      </li>
-                                    </ul>                                      
+                                <div class="list-block simple-list">
+                                  <ul id="lUl">
+                                      <li class="item-content" style="padding-left:0px;">
+                                        <div class="item-inner" style="padding-right: 0px;">
+                                        <div class="listItem">
+                                                <div>19/01/18</div>
+                                                <div class="listJus">Installed</div>
+                                                <div>CDTM</div>
+                                        </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content" style="padding-left:0px;">
+                                        <div class="item-inner" style="padding-right: 0px;">
+                                        <div class="listItem">
+                                                <div>18/01/18</div>
+                                                <div class="listJus">Technician</div>
+                                                <div>MTU</div>
+                                        </div>
+                                        </div>
+                                    </li>
+                                      <li class="item-content" style="padding-left:0px;">
+                                        <div class="item-inner" style="padding-right: 0px;">
+                                        <div class="listItem">
+                                                <div>20/12/17</div>
+                                                <div class="listJus">Distribution</div>
+                                                <div>K&W</div>
+                                        </div>
+                                        </div>
+                                    </li>
+                                      <li class="item-content" style="padding-left:0px;">
+                                        <div class="item-inner" style="padding-right: 0px;">
+                                        <div class="listItem">
+                                                <div>20/11/17</div>
+                                                <div class="listJus">Manufacturing</div>
+                                                <div>MTU</div>
+                                        </div>
+                                        </div>
+                                    </li>
+                                  </ul>
                                 </div>
-                                <div style="padding: 0px 8px; color: white;">
-                                <div class="cStatus" style="margin-top: 0px;">Scheduled Date: <span>10/01/2018</span></div>
-                                <div class="cStatus" style="margin: 15px 0px;">Reason: Part replacement on engine<span></span></div>
-                                    </div>
                             </div>
                         </a>
                        
