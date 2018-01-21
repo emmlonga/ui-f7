@@ -164,16 +164,20 @@ function lHis (type) {
 function callbackOk () {
     demountComponent(engines[0].missingComponents[0],engines[0].engineId);
     console.log("okk");
-    
-    c1status=1
+    $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div style="text-align: center"><img style="height: 110px" src="Images/Ripple2.svg"></div></div>');
     setTimeout(function() {
     $("#removeMe").remove();
-    $("#maAlert").html(" Missing Component Detected");
-    $("#maMessage").html("Please install Oil Filter")
     $('.blueCard .accordion-list').remove();
     $('.mTask').html('No maintenance task available');
     $("#running").html(" Idle");
-       }, 1500);
+        setTimeout(function() {
+                $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div class="cStatus maStatus" style="font-size:18px;margin-top: 17px"><i class="material-icons" style="font-size: 20px;position: relative;top:3px;">warning</i><b id="maAlert"> Missing Component Detected</b></div><div class="cStatus maStatus" id="maMessage" style="margin-bottom: 14px">Please install Air Filter<span></span></div></div>');
+                c2status=1;
+                setTimeout(function() {
+                    mountCall();
+                }, 4000); 
+                }, 1000)
+       }, 2000);
 }
 
 function callbackCancel () {
@@ -181,25 +185,45 @@ function callbackCancel () {
     console.log("no ok");
 }
 
+
 function componentRemoved (engine) {
     if (engine.missingComponents.length!=0 && c1status==0){
         c1status=1;
-        myApp.confirm("The engine can no longer recognize this component. Please confirm the operation.", "Demounting alert", callbackOk, callbackCancel);
+        $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div style="text-align: center"><img style="height: 110px" src="Images/Ripple2.svg"></div></div>');
+        setTimeout(function() {
+            $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div style="text-align: center"><img class="attIcon" style="height: 110px" src="Images/minus.svg"></div></div>');
+            setTimeout(function() {
+            $('.attIcon').toggleClass('move');
+                setTimeout(function() {
+                $(".maintCard div").html(displayRemoveConfirm());
+                $('.showMe').toggleClass('move');
+                }, 500);
+            }, 500);
+        }, 4000);
     }
 }
-
 
 //Component2b - Adding a component//
 function callbackOk2 () {
     mountComponent(engines[0].newComponents[0],engines[0].engineId);
     console.log("ok");
-    c2status=1;
-    setTimeout(function() {
-             //myApp.alert("","Maintenance Successful")
-    $("#courseList").prepend(createOil());
-    $(".maintCard").remove();
-        $("#running").html(" Running");
-       }, 1500);
+    $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div style="text-align: center"><img style="height: 110px" src="Images/Ripple2.svg"></div></div>');
+     setTimeout(function() {
+     $("#courseList").prepend(createOil());
+    $("#running").html(" Running");
+        setTimeout(function() {
+                $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div style="text-align: center"><img class="attIcon" style="height: 110px" src="Images/check.svg"></div></div>');
+                setTimeout(function() {
+                    $('.attIcon').toggleClass('move');
+                    $('.maintCard').toggleClass('move');
+                    setTimeout(function() {
+                        $(".maintCard div").html(displaySuccess());
+                        $('.showMe').toggleClass('move');
+                        }, 500);
+                    }, 500);
+                }, 1000)
+       }, 2000);
+    
 }
 
 function callbackCancel2 () {
@@ -208,9 +232,19 @@ function callbackCancel2 () {
 }
 
 function componentAdded (engine) {
-    if (engine.newComponents.length!=0 && c2status==0){
-        c2status=1;
-        myApp.confirm("New component identified. Please confirm the operation.", "Mounting alert", callbackOk2, callbackCancel2);
+    if (engine.newComponents.length!=0 && c3status==0){
+        c3status=1;
+        $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div style="text-align: center"><img style="height: 110px" src="Images/Ripple2.svg"></div></div>');
+        setTimeout(function() {
+            $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div style="text-align: center"><img class="attIcon" style="height: 110px" src="Images/plus.svg"></div></div>');
+            setTimeout(function() {
+            $('.attIcon').toggleClass('move');
+                setTimeout(function() {
+                $(".maintCard div").html(displayAddConfirm());
+                $('.showMe').toggleClass('move');
+                }, 500);
+            }, 500);
+        }, 4000);
     }
 }
 

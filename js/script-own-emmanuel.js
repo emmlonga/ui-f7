@@ -34,6 +34,7 @@ $(document).ready(function () {
     console.log("App is initialized");
     c1status=0;
     c2status=0;
+    c3status=0;
     window.setInterval(function(){
         getComponents();
         getComponentTransactions();
@@ -144,43 +145,11 @@ myApp.onPageInit('componentb', function (page) {
     
     })
 
-myApp.onPageInit('componentb2', function (page) {
-        // Do something here for "index" page
-    console.log(page.name + ' initialized');
-    var interval2 = window.setInterval(function(){
-        mountCall();
-        if (c2status==1){
-            clearInterval(interval2);
-        }
-    }, 5000);
-    if (c2status==1){
-        $('.blueCard .accordion-list').remove();
-      $('.mTask').html('No maintenance task available');
-    }
-    
-    $$('.open-confirm').on('click', function () {
-  myApp.confirm('Is the maintenance task complete?', function () {
-      c2status=1;
-      $('.blueCard .accordion-list').remove();
-      $('.mTask').html('No maintenance task available');
-    });
-    });
-    
-    })
 
 function mountCall(){
     componentAdded(engines[0]);
 }
 
-myApp.onPageInit('componentb3', function (page) {
-        // Do something here for "index" page
-    console.log(page.name + ' initialized');
-    listHis(Cb);
-    
-    if (c2status==1){
-        $("#lUl").prepend('<li class="item-content" style="padding-left:0px;"><div class="item-inner" style="padding-right: 0px;"><div class="listItem">                                                <div>10/01/18</div><div class="listJus">Installed</div><div>CDTM</div></div></div></li>');
-    }    
-    })
 
 myApp.onPageInit('engine', function (page) {
         // Do something here for "index" page
@@ -189,27 +158,8 @@ myApp.onPageInit('engine', function (page) {
      var interval1= setInterval(function(){
          console.log("oi");
         demountCall();
-         if (c1status==1){
-             setTimeout(function() {
-            mountCall();
-       }, 5000); 
-         }
     }, 500);
     
-    if (c1status==1){
-        
-    }
-    })
-
-myApp.onPageInit('engine3', function (page) {
-        // Do something here for "index" page
-        console.log(page.name + ' initialized');
-        if (c1status==1) {
-            $("#lUl").prepend('<li class="item-content" style="padding-left:0px;" onclick="javascript:mainView.router.reloadPage(\'componentb.html\')"><div class="item-inner" style="padding-right: 0px;">                                            <div style="color:#EC192F; font-size: 14px"><i class="material-icons">arrow_downward</i></div>                                        <div class="listItem"><div>24/04/17</div><div class="listJus">Oil Filter</div><div>MTU</div></div></div></li>');
-        }
-        if (c2status==1) {
-            $("#lUl").prepend('<li class="item-content" style="padding-left:0px;" onclick="javascript:mainView.router.reloadPage(\'component.html\')"><div class="item-inner" style="padding-right: 0px;">                                            <div style="color:#263884; font-size: 14px"><i class="material-icons">arrow_upward</i></div>                                        <div class="listItem"><div>24/04/17</div><div class="listJus">Oil Filter</div><div>MTU</div></div></div></li>');
-        }
     })
 
 
@@ -485,3 +435,18 @@ function convDate (date){
 
 
 /**NEW STARTS HERE**/
+
+function displayRemoveConfirm(){
+    var one = '<div style="padding: 0px 8px; color: white; position: absolute; left:0px"><div style="text-align: center"><img style="height: 110px" class="" src="Images/minus.svg"></div></div><div class="list-block attending showMe" style="margin-left: 110px"><ul>       <li class="swipeout">       <div class="swipeout-content"><a href=""><div class="item-inner" style="margin:0px 8px;justify-content:flex-start; padding-right: 0px">                                                          <div  style="font-size: 20px; margin-top: 10px; margin-bottom: -10px; color: white;">Confirm Demounting</div></div></a></div></li></ul> </div><!-- This block will be displayed if anything found, and this list block is used a searbar target --><div class="list-block list-block-search searchbar-found showMe" style="margin-left: 110px"><ul id="courseList" style="">                                    <li class="swipeout" id="removeMe" style="color:white; background-color: #EF5350"><div class="swipeout-content"><a onclick="callbackOk()" class="item-content item-link" style="background-image: none; padding-left: 0px"><div class="item-inner"  style="background-image: none; padding: 0px 8px"><div class="item-title-row"><div class="item-after" style="margin-left: 0px;color:white"><b>24/04/17</b></div></div><div class="item-subtitle"><b>Oil Filter</b></div><div class="item-title-row"><div style="text-align: right; justify-content: flex-end; color:white" class="item-after"><b>HRMW-580</b></div><div class="item-after" style="color:white"><b>100029402017</b></div></div></div></a></div></li></ul></div>'
+    return one;
+}
+
+function displayAddConfirm(){
+    var one = '<div style="padding: 0px 8px; color: white; position: absolute; left:0px"><div style="text-align: center"><img style="height: 110px" class="" src="Images/plus.svg"></div></div><div class="list-block attending showMe" style="margin-left: 110px"><ul>       <li class="swipeout">       <div class="swipeout-content"><a href=""><div class="item-inner" style="margin:0px 8px;justify-content:flex-start; padding-right: 0px">                                                          <div  style="font-size: 20px; margin-top: 10px; margin-bottom: -10px; color: white;">Confirm Mounting</div></div></a></div></li></ul> </div><!-- This block will be displayed if anything found, and this list block is used a searbar target --><div class="list-block list-block-search searchbar-found showMe" style="margin-left: 110px"><ul id="courseList" style="">                                    <li class="swipeout" id="removeMe" style="color:white; background-color: #EF5350"><div class="swipeout-content"><a onclick="callbackOk2()" class="item-content item-link" style="background-image: none; padding-left: 0px"><div class="item-inner"  style="background-image: none; padding: 0px 8px"><div class="item-title-row"><div class="item-after" style="margin-left: 0px;color:white"><b>24/04/17</b></div></div><div class="item-subtitle"><b>Oil Filter</b></div><div class="item-title-row"><div style="text-align: right; justify-content: flex-end; color:white" class="item-after"><b>HRMW-580</b></div><div class="item-after" style="color:white"><b>100029402017</b></div></div></div></a></div></li></ul></div>'
+    return one;
+}
+
+function displaySuccess(){
+    var one = '<div style="padding: 0px 8px; color: white;position: absolute;left:0px"><div style="text-align: center"><img class="attIcon" style="height: 110px" src="Images/check.svg"></div></div>                                <div style="padding: 0px 8px; color: white;"><div class="cStatus maStatus showMe" style="font-size:22px; margin-left: 110px; line-height: 92.8px"><b id="maAlert"> Maintenance Complete</b></div></div>'
+    return one;
+}

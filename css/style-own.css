@@ -140,6 +140,64 @@
     top: 5px;
 }
 
+.attIcon {
+    transform: translate(0px,0px);
+    transition: transform 500ms;
+}
+
+.attIcon.move{
+    transform: translate(-185px,0px);
+}
+
+.showMe{
+    opacity: 0;
+    transition: opacity 500ms
+}
+
+.showMe.move{
+    opacity: 1;
+}
+
+.maintCard {
+     background-color: #EF5350;
+    transition: background-color 500ms;
+}
+
+.maintCard.move{
+    background-color: #8BC34A;
+}
+
+.androidScreen{
+    height: 100%;
+    width: 365px;
+    position: relative;
+    background-image: url(../Images/adam_iphone8plusspacegrey_portrait.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+
+.whiteBg{
+    background-color: white;
+    position: absolute;
+    height: 78%;
+    right: 5.5%;
+    left: 5.5%;
+    top: 10.2%;
+}
+
+/*.attIcon {
+    transform: scale(1);
+    transform: translate(0px,0px);
+    opacity: 1;
+    transition: transform 500ms, opacity 500ms;
+}
+
+.attIcon.move{
+    transform: scale(0);
+    opacity: 0.0;
+}*/
+
 /*Component*/
 
 .spCard {
@@ -211,6 +269,9 @@
     padding: 3px 0px;
     font-size: 16px;
 }
+
+
+
 
 
 /**Maintenance*/
