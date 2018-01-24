@@ -44,14 +44,14 @@
     width: auto;
     height: 85px;
     margin-left: 23.5px;
-    margin-top: 10px;
+    margin-top: 25px;
       z-index: 60;
 }
 
 .rInfo{
     position: absolute;
-    font-size: 16px;
-    top: 6px;
+    font-size: 19px;
+    top: 16px;
     left: 131px;
 }
 
@@ -63,7 +63,7 @@
     width: auto;
     height: 70px;
     margin-left: 31.5px;
-    margin-top: 25px;
+    margin-top: 40px;
     margin-bottom: 25px;
       z-index: 60;
     border-radius: 10%;
@@ -71,8 +71,8 @@
 
 .lInfo{
     position: absolute;
-    font-size: 16px;
-    top: 21px;
+    font-size: 19px;
+    top: 36px;
     left: 131px;
 }
 
@@ -123,7 +123,7 @@
     height: 130px;
     display: block;
     margin-left: 16.5px;
-    margin-top: 12px;
+    margin-top: 10px;
     margin-bottom: -11.5px;
     background-color: white;
     border: 1.5px solid rgb(48,112,179);
@@ -146,7 +146,7 @@
 }
 
 .attIcon.move{
-    transform: translate(-185px,0px);
+    transform: translate(-148px,0px);
 }
 
 .showMe{
@@ -168,23 +168,33 @@
 }
 
 .androidScreen{
-    height: 100%;
-    width: 365px;
+    margin-left: 2px;
+    height: 744px;
+    width: 534px;
     position: relative;
-    background-image: url(../Images/adam_iphone8plusspacegrey_portrait.png);
+    background-image: url(../Images/adam_ipadair2_spacegrey_portrait.png);
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: auto 745px;
 }
 
 
 .whiteBg{
     background-color: white;
     position: absolute;
-    height: 78%;
-    right: 5.5%;
-    left: 5.5%;
-    top: 10.2%;
+    height: 73.3%;
+    right: 8.1%;
+    left: 6.8%;
+    top: 9.5%;
 }
+
+/*.whiteBg{
+    background-color: white;
+    position: absolute;
+    height: 73.3%;
+    right: 6.5%;
+    left: 6.9%;
+    top: 9.5%;
+}*/
 
 /*.attIcon {
     transform: scale(1);
@@ -243,7 +253,13 @@
 
 .cInfo{
     position: absolute;
-    top: 20px;
+    top: 18px;
+    left: 170px;
+}
+
+.coInfo{
+    position: absolute;
+    top: 24px;
     left: 170px;
 }
 
@@ -257,17 +273,17 @@
 .cVerify{
     margin-left: 56px;
     margin-top: 16px;
-    margin-bottom: 14px;
+    margin-bottom: 5px;
     font-size: 16px;
 }
 
 .cTitle{
-    font-size: 26px;
+    font-size: 28px;
 }
 
 .cStatus{
     padding: 3px 0px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -294,16 +310,17 @@
 .maStatus{
     text-align: center;
     margin: 4px 0px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .list-block .item-after{
+    font-size: 16px;
     color: black;
     /*font-size: 14px;*/
 }
 
 .list-block .item-subtitle{
-    /*font-size: 15px;*/
+    font-size: 16px;
 }
 
 /*History*/
@@ -317,7 +334,7 @@
 }
 
 .listTitle div {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .listTitle:after {
@@ -337,11 +354,12 @@
     justify-content: space-between; 
     margin: 0px 8px;
     width: 100%;
+    font-size: 17px;
 }
 
 .listJus{
     position: absolute;
-    left: 170px;
+    left: 166px;
     top:auto;
 }
 

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+
+    <title>Your App Name</title>
+
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.css">
+
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+
+    <!-- embed jquery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--Path to own CSS SHEET-->
+    <link rel="stylesheet" href="css/style-own.css">
+    <link rel="stylesheet" href="css/circle.css">
+    
+        <!--Framework 7 icons-->
+    <link rel="stylesheet" href="lib/Framework7-Icons-master/css/framework7-icons.css">
+    
+    <!-- Material IO icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            
+    <!-- CSS FLAGS-->
+    <link rel="stylesheet" href="lib/flag-icon-css-master/css/flag-icon.css">
+    
+    <!--Bootstrap script for the progressbar-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+
+</head>
+
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+
+    <!--THIS IS THE STATUSBAR-->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed" >
+                <div data-page="componentb" class="page" style="background: #f5f6f7;">
+                    <div class="androidScreen">
+                        <div class="whiteBg">
+                                                <div class="navbar">
+                        <div class="navbar-inner sliding">
+                            <div class="left">
+                                <a onclick="javascript:mainView.router.loadPage('client.html')" class="link icon-only" id="backGeneral">
+                                    <i class="icon icon-back"></i> 
+                                </a>
+                            </div>
+                            <div style="font-size: 24px" class="center">Component Overview</div>
+                            <div class="right">
+                                <i onclick="javascript:mainView.router.loadPage('index.html')" class="material-icons">home</i>
+                                <a href="#" class="link icon-only" onclick="createPopover()">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                     
+                    
+                    <div class="page-content">
+                      <div class="block">
+                              <div id="card-list">
+                       
+                        <a href="" class="link">
+                            <div class="card demo-card-header-pic blueCard" style="padding: 8px 0px">
+                            
+                                <div class="spImgDiv shadow--2dp"><img class="spImg"  style=""  src="Images/oilfilter.jpg"></div>
+                                <i class="material-icons spVer" style="font-size: 40px">verified_user</i>
+                                
+                                <div class="coInfo">
+                                <div class="cTitle">Oil Filter HRMW580</div>
+                                <div class="cStatus" style="margin-top: 5px;">Serial Number: 1003429411017<span></span></div>
+                                <div class="cStatus">Batch Number: <span>23402017</span></div>
+                                <div class="cStatus">Owner: <span>CDTM</span></div>
+                                
+                                </div>
+                                <div class="cVerify" style="color:#263884;"><div><span>Verified</span></div>
+                                </div>
+                                <i class="material-icons rArrow" style="font-size: 24px">info_outline</i>
+                                
+                            <!--<div class="list-block attending" style="padding: 0px 10px">
+                                <ul>
+                                <li class="swipeout">
+                                          <div class="swipeout-content">
+                                              <a href="">
+                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
+                                                      <div class="item-title-row">
+                                                          <div class="item-title">Serial Number: 1000029402017<span></span></div>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>                                     
+                                      </li>
+                                    <li class="swipeout">
+                                          <div class="swipeout-content">
+                                              <a href="">
+                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
+                                                      <div class="item-title-row">
+                                                          <div class="item-title">Batch Number: <span>20302017</span></div>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>                                     
+                                      </li>
+                                    <li class="swipeout">
+                                          <div class="swipeout-content">
+                                              <a href="">
+                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
+                                                      <div class="item-title-row">
+                                                          <div class="item-title">Production Date: <span>02/02/2017</span></div>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>                                     
+                                      </li>
+                                </ul>
+                                </div>-->
+                            </div>
+                        </a>
+                       
+                                  
+                        <a href="" class="link">
+                            <div class="card demo-card-header-pic blueCard" style="padding: 5px 10px">
+                                
+                            
+                                <div class="list-block attending">
+                                  <ul>
+                                      <li class="swipeout">
+                                          <div class="swipeout-content">
+                                              <a href="">
+                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal;font-size: 14px">
+                                                      <div class="item-title-row">
+                                                          <div class="item-title" style="font-size: 20px; margin-bottom: 10px;">Component value chain history</div>
+                                                      </div>
+                                                      </div>
+                                                  <div class="listTitle">
+                                                            <div>Date</div>
+                                                            <div style="margin-left:-23px">Action</div>
+                                                            <div>Agent</div>
+                                                          </div>
+                                              </a>
+                                          </div>                                     
+                                      </li>
+                                    </ul>                                      
+                                </div>
+                                <div class="list-block simple-list">
+                                  <ul id="lUl">
+                                      <li class="item-content" style="padding-left:0px;">
+                                        <div class="item-inner" style="padding-right: 0px;">
+                                        <div class="listItem">
+                                                <div>19/01/18</div>
+                                                <div class="listJus">Installed</div>
+                                                <div>CDTM</div>
+                                        </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content" style="padding-left:0px;">
+                                        <div class="item-inner" style="padding-right: 0px;">
+                                        <div class="listItem">
+                                                <div>18/01/18</div>
+                                                <div class="listJus">Technician</div>
+                                                <div>MTU</div>
+                                        </div>
+                                        </div>
+                                    </li>
+                                      <li class="item-content" style="padding-left:0px;">
+                                        <div class="item-inner" style="padding-right: 0px;">
+                                        <div class="listItem">
+                                                <div>20/12/17</div>
+                                                <div class="listJus">Distribution</div>
+                                                <div>K&W</div>
+                                        </div>
+                                        </div>
+                                    </li>
+                                      <li class="item-content" style="padding-left:0px;">
+                                        <div class="item-inner" style="padding-right: 0px;">
+                                        <div class="listItem">
+                                                <div>20/11/17</div>
+                                                <div class="listJus">Manufacturing</div>
+                                                <div>MTU</div>
+                                        </div>
+                                        </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                            </div>
+                        </a>
+                       
+                           
+                            </div>
+                      </div>
+                    </div>
+
+
+      
+                        </div>
+                    </div>
+              
+                    </div>
+            </div>
+        </div>
+
+    </div>
+     
+</body>
+    
+    <!--Our javascript script-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/script-own-emmanuel.js"></script>
+
+</html>

@@ -32,6 +32,17 @@ myApp.onPageInit('about', function (page) {
     /** App initialization**/
 $(document).ready(function () {
     console.log("App is initialized");
+    $(window).keypress(function(e) {
+        if (e.which == 49) {
+         identifyComponent(["resource:org.brix.Component#E2000016540C019524401FD2"],["resource:org.brix.Component#E2000016540C019524401FB9","E2000016540C019524401FB9"]);
+            setTimeout(function(){
+                demountCall();
+            },500);
+        } else if (e.which == 53) {
+         identifyComponent(["resource:org.brix.Component#E2000016540C019624401FB2","resource:org.brix.Component#E2000016540C019624401FB2"],["resource:org.brix.Component#E2000016540C021224401FB9"]);
+            mountCall();
+        } 
+    });
     c1status=0;
     c2status=0;
     c3status=0;
@@ -120,7 +131,7 @@ myApp.onPageInit('component3', function (page) {
         // Do something here for "index" page
     console.log(page.name + ' initialized');
     $.ajax({
-          url: 'http://localhost:3000/componenttransaction',
+          url: 'http://localhost:3333/componenttransaction',
           method: 'GET'
         }).then(function(data) {
             //lHis(filterComponentTransaction(parseComponentTransaction(data),"comp1"));
@@ -156,9 +167,11 @@ myApp.onPageInit('engine', function (page) {
         console.log(page.name + ' initialized');
     console.log(page.name + ' initialized');
      var interval1= setInterval(function(){
-         console.log("oi");
         demountCall();
-    }, 500);
+         if (c2status==1){
+             mountCall();
+         }
+    }, 200);
     
     })
 
@@ -401,7 +414,7 @@ function saveOwners(own) {
 //HelpFunctions
 function getFromRest(resourceName, saveFunction, parseFunction) {
     $.ajax({
-        url: 'http://localhost:3000/api/' + resourceName,
+        url: 'http://localhost:3333/api/' + resourceName,
         method: 'GET',
         async: false
       }).then(function(data) {
@@ -411,11 +424,9 @@ function getFromRest(resourceName, saveFunction, parseFunction) {
 }
 
 function postToRest(resourceName, jsonObj) {
-    $.post("http://localhost:3000/api/" + resourceName,
+    $.post("http://localhost:3333/api/" + resourceName,
         jsonObj,
-    function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-    });
+    );
 }
 
 function cutName (s) {
@@ -442,11 +453,21 @@ function displayRemoveConfirm(){
 }
 
 function displayAddConfirm(){
-    var one = '<div style="padding: 0px 8px; color: white; position: absolute; left:0px"><div style="text-align: center"><img style="height: 110px" class="" src="Images/plus.svg"></div></div><div class="list-block attending showMe" style="margin-left: 110px"><ul>       <li class="swipeout">       <div class="swipeout-content"><a href=""><div class="item-inner" style="margin:0px 8px;justify-content:flex-start; padding-right: 0px">                                                          <div  style="font-size: 20px; margin-top: 10px; margin-bottom: -10px; color: white;">Confirm Mounting</div></div></a></div></li></ul> </div><!-- This block will be displayed if anything found, and this list block is used a searbar target --><div class="list-block list-block-search searchbar-found showMe" style="margin-left: 110px"><ul id="courseList" style="">                                    <li class="swipeout" id="removeMe" style="color:white; background-color: #EF5350"><div class="swipeout-content"><a onclick="callbackOk2()" class="item-content item-link" style="background-image: none; padding-left: 0px"><div class="item-inner"  style="background-image: none; padding: 0px 8px"><div class="item-title-row"><div class="item-after" style="margin-left: 0px;color:white"><b>24/04/17</b></div></div><div class="item-subtitle"><b>Oil Filter</b></div><div class="item-title-row"><div style="text-align: right; justify-content: flex-end; color:white" class="item-after"><b>HRMW-580</b></div><div class="item-after" style="color:white"><b>100029402017</b></div></div></div></a></div></li></ul></div>'
+    var one = '<div style="padding: 0px 8px; color: white; position: absolute; left:0px"><div style="text-align: center"><img style="height: 110px" class="" src="Images/plus.svg"></div></div><div class="list-block attending showMe" style="margin-left: 110px"><ul>       <li class="swipeout">       <div class="swipeout-content"><a href=""><div class="item-inner" style="margin:0px 8px;justify-content:flex-start; padding-right: 0px">                                                          <div  style="font-size: 20px; margin-top: 10px; margin-bottom: -10px; color: white;">Confirm Mounting</div></div></a></div></li></ul> </div><!-- This block will be displayed if anything found, and this list block is used a searbar target --><div class="list-block list-block-search searchbar-found showMe" style="margin-left: 110px"><ul id="courseList" style="">                                    <li class="swipeout" id="removeMe" style="color:white; background-color: #EF5350"><div class="swipeout-content"><a onclick="callbackOk2()" class="item-content item-link" style="background-image: none; padding-left: 0px"><div class="item-inner"  style="background-image: none; padding: 0px 8px"><div class="item-title-row"><div class="item-after" style="margin-left: 0px;color:white"><b>26/01/18</b></div></div><div class="item-subtitle"><b>Oil Filter</b></div><div class="item-title-row"><div style="text-align: right; justify-content: flex-end; color:white" class="item-after"><b>HRMW-580</b></div><div class="item-after" style="color:white"><b>019624401FB2</b></div></div></div></a></div></li></ul></div>'
     return one;
 }
 
 function displaySuccess(){
-    var one = '<div style="padding: 0px 8px; color: white;position: absolute;left:0px"><div style="text-align: center"><img class="attIcon" style="height: 110px" src="Images/check.svg"></div></div>                                <div style="padding: 0px 8px; color: white;"><div class="cStatus maStatus showMe" style="font-size:22px; margin-left: 110px; line-height: 92.8px"><b id="maAlert"> Maintenance Complete</b></div></div>'
+    var one = '<div style="padding: 0px 8px; color: white;position: absolute;left:0px"><div style="text-align: center"><img class="attIcon" style="height: 110px" src="Images/check.svg"></div></div>                                <div style="padding: 0px 8px; color: white;"><div class="cStatus maStatus showMe" style="font-size:22px; margin-left: 65px; line-height: 92.8px"><b id="maAlert"> Maintenance Complete</b></div></div>'
     return one;
+}
+
+
+function identifyComponent(newComponent, missingComponent){
+    jsonObj = {      
+        "missingComponents": missingComponent,
+        "newComponents": newComponent,
+    };
+    console.log(jsonObj);
+    postToRest('mockchain/componentIdentified', jsonObj)
 }

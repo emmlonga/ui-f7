@@ -2,27 +2,6 @@
 
 //var root = 'https://jsonplaceholder.typicode.com/posts/';
 
-var root = 'http://localhost:3000/posts'
-
-
-
- $.ajax({
-          url: root,
-          method: 'GET'
-        }).then(function(data) {
-          saveData(data);
-        });
-
-
-
-$.ajax({
-          url: 'http://localhost:3000/profile',
-          method: 'GET'
-        }).then(function(data) {
-          saveData2(data);
-        });
-
-
 
 function saveData (data){
     dummy = data;
@@ -177,7 +156,7 @@ function callbackOk () {
                     mountCall();
                 }, 4000); 
                 }, 1000)
-       }, 2000);
+       }, 12000);
 }
 
 function callbackCancel () {
@@ -187,7 +166,7 @@ function callbackCancel () {
 
 
 function componentRemoved (engine) {
-    if (engine.missingComponents.length!=0 && c1status==0){
+    if (engine.missingComponents.length==2 && c1status==0){
         c1status=1;
         $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div style="text-align: center"><img style="height: 110px" src="Images/Ripple2.svg"></div></div>');
         setTimeout(function() {
@@ -199,7 +178,7 @@ function componentRemoved (engine) {
                 $('.showMe').toggleClass('move');
                 }, 500);
             }, 500);
-        }, 4000);
+        }, 3000);
     }
 }
 
@@ -222,7 +201,7 @@ function callbackOk2 () {
                         }, 500);
                     }, 500);
                 }, 1000)
-       }, 2000);
+       }, 12000);
     
 }
 
@@ -232,7 +211,7 @@ function callbackCancel2 () {
 }
 
 function componentAdded (engine) {
-    if (engine.newComponents.length!=0 && c3status==0){
+    if (engine.newComponents.length==2 && c3status==0){
         c3status=1;
         $(".maintCard div").html('<div style="padding: 0px 8px; color: white;"><div style="text-align: center"><img style="height: 110px" src="Images/Ripple2.svg"></div></div>');
         setTimeout(function() {
@@ -244,7 +223,7 @@ function componentAdded (engine) {
                 $('.showMe').toggleClass('move');
                 }, 500);
             }, 500);
-        }, 4000);
+        }, 3000);
     }
 }
 
@@ -278,7 +257,7 @@ function listHis (type) {
 
 
 function createOil (){
-    var Oil = '<li class="swipeout"><div class="swipeout-content"><a onclick="mainView.router.reloadPage(\'componentb.html\')" class="item-content item-link" style="background-image: none; padding-left: 0px"><div class="item-inner"  style="background-image: none; padding: 0px 8px"><div class="item-title-row"><div class="item-after" style="margin-left: 0px">19/07/16</div></div><div class="item-subtitle"><b>Oil Filter</b></div>  <div class="item-title-row"><div style="text-align: right; justify-content: flex-end" class="item-after">HRMW-580</div><div class="item-after">1003429411017</div></div></div></a></div></li>'
+    var Oil = '<li class="swipeout"><div class="swipeout-content"><a onclick="mainView.router.reloadPage(\'componentb_2.html\')" class="item-content item-link" style="background-image: none; padding-left: 0px"><div class="item-inner"  style="background-image: none; padding: 0px 8px"><div class="item-title-row"><div class="item-after" style="margin-left: 0px">26/01/18</div></div><div class="item-subtitle"><b>Oil Filter</b></div>  <div class="item-title-row"><div style="text-align: right; justify-content: flex-end" class="item-after">HRMW-580</div><div class="item-after">019624401FB2</div></div></div></a></div></li>'
     return Oil;
 }
 

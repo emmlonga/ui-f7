@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+
+    <title>Your App Name</title> 
+
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="lib/Framework7-1.5.0/dist/css/framework7.material.colors.css">
+
+    <!-- Path to your custom app styles-->
+    <!--        <link rel="stylesheet" href="../CSS/style.css"/>-->
+
+    <!-- embed jquery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- embed font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--Path to own CSS SHEET-->
+    <link rel="stylesheet" href="css/style-own.css">
+    <link rel="stylesheet" href="css/circle.css">
+    
+        <!--Framework 7 icons-->
+    <link rel="stylesheet" href="lib/Framework7-Icons-master/css/framework7-icons.css">
+    
+    <!-- Material IO icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            
+    <!-- CSS FLAGS-->
+    <link rel="stylesheet" href="lib/flag-icon-css-master/css/flag-icon.css">
+    
+    <!--Bootstrap script for the progressbar-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+
+</head>
+
+<!-- X when the body has loaded -->
+<!--<body onload="X()">-->
+
+<body>
+
+    <!--THIS IS THE STATUSBAR-->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed" >
+                <div data-page="engine" class="page" style="background: #f5f6f7;">
+                    <div class="androidScreen">
+                        <div class="whiteBg">
+                                             <div class="navbar">
+                        <div class="navbar-inner sliding">
+                            <div class="left">
+                                <a onclick="javascript:mainView.router.back()" class="link icon-only" id="backGeneral">
+                                    <i class="icon icon-back"></i>
+                                </a>
+                            </div>
+                            <div style="font-size: 24px" class="center">Engine Overview</div>
+                            <div class="right">
+                                <i onclick="javascript:mainView.router.loadPage('index.html')" class="material-icons">home</i>
+                                <a href="#" class="link icon-only" onclick="createPopover()">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                     
+                    
+                   
+                    <div class="page-content" >
+                      <div class="block">
+                              <div id="card-list">
+                       
+                        
+                            <div class="card demo-card-header-pic blueCard" style="padding: 8px 0px">
+                            
+                                <div class="enImgDiv shadow--2dp" style="margin-bottom: 14px"><img class="enImg"  style=""  src="Images/mtu-16v-2000-m96-diesel-engine-1.jpg"></div>                                
+                                <div class="cInfo">
+                                <div class="cTitle">Engine 10V1600</div>
+                                <div class="cStatus" style="margin-top: 0px;">Serial Number: 10232003<span></span></div>
+                                <div class="cStatus" style="margin-top: 0px;">Owner: CDTM<span></span></div>
+                                    <div class="cStatus">Status: <span id="running">Running</span></div>
+                                    
+                                
+                                
+                                </div>
+                                <i class="material-icons rArrow" style="font-size: 24px">info_outline</i>
+                                
+                          
+                            </div>
+                        
+                       
+                                  
+                         
+                            <div class="card demo-card-header-pic shadow--4dp maintCard" style="padding: 5px 10px; height: 100px;">
+                                
+                            
+                                
+                                <div style="padding: 0px 8px; color: white; margin-top: -4px ">
+                                    <div class="cStatus maStatus" style="font-size:20px;margin-top: 17px"><i class="material-icons" style="font-size: 18px;position: relative;top:3px;">warning</i><b id="maAlert"> Maintenance Alert</b></div>
+                                <div class="cStatus maStatus" id="maMessage" style="margin-bottom: 14px">Please replace marked component<span></span></div>
+                                    </div>
+                            </div>
+                        
+                                               
+                                  
+                         
+                            <div class="card demo-card-header-pic blueCard" style="padding: 5px 10px">
+                                
+                            
+                                <div class="list-block attending">
+                                  <ul>
+                                      <li class="swipeout">
+                                          <div class="swipeout-content">
+                                              <a href="">
+                                                  <div class="item-inner" style="margin:0px 8px;justify-content: normal">
+                                                      <div class="item-title-row">
+                                                          <div class="item-title" style="font-size: 20px; margin-bottom: 5px;">Component List</div>
+                                                      </div>
+                                                      </div>
+                                                  <div class="listTitle">
+                                                            <div>Installation</div>
+                                                            <div style="margin-left: -60px">Component</div>
+                                                            <div>Details</div>
+                                                          </div>
+                                              </a>
+                                          </div>                                     
+                                      </li>
+                                    </ul>                                      
+                                </div>
+                        
+                     <div style="background-color: white;" class="">
+                        <!-- This block will be displayed if nothing found -->
+                        <div class="content-block searchbar-not-found">
+                          <div class="content-block-inner">Nothing found</div>
+                        </div>
+
+                        <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+                        <div class="list-block list-block-search searchbar-found">
+                            <ul id="courseList" style="overflow: auto; height: 137px">
+
+                                    <li class="swipeout" id="removeMe" style="color:#EC192F; background-color: #FFEBEE">
+                                        <div class="swipeout-content">
+                                            <a onclick="mainView.router.reloadPage('componentb_2.html')" class="item-content item-link" style="background-image: none; padding-left: 0px">
+                                                <div class="item-inner"  style="background-image: none; padding: 0px 8px">
+                                                    <div class="item-title-row">
+                                                        <div class="item-after" style="margin-left: 0px;color:#EC192F"><b>24/04/17</b></div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Oil Filter</b></div>
+                                                    <div class="item-title-row">
+                                                        <div style="text-align: right; justify-content: flex-end; color:#EC192F" class="item-after"><b>HRMW580</b></div>
+                                                        <div class="item-after" style="color:#EC192F"><b>019524401FB9</b></div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a onclick="mainView.router.reloadPage('componentb_2.html')" class="item-content item-link" style="background-image: none; padding-left: 0px">
+                                                <div class="item-inner"  style="background-image: none; padding: 0px 8px">
+                                                    <div class="item-title-row">
+                                                        <div class="item-after" style="margin-left: 0px">12/07/16</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Water Pump</b></div>
+                                                    <div class="item-title-row">
+                                                        <div style="text-align: right; justify-content: flex-end" class="item-after">WPMH150</div>
+                                                        <div class="item-after">010149212015</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a onclick="mainView.router.reloadPage('componentb_2.html')" class="item-content item-link" style="background-image: none; padding-left: 0px">
+                                                <div class="item-inner"  style="background-image: none; padding: 0px 8px">
+                                                    <div class="item-title-row">
+                                                        <div class="item-after" style="margin-left: 0px">27/10/15</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Turbocharger</b></div>
+                                                    <div class="item-title-row">
+                                                        <div style="text-align: right; justify-content: flex-end" class="item-after">TBMC750</div>
+                                                        <div class="item-after">010143622015</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                <li class="swipeout">
+                                        <div class="swipeout-content">
+                                            <a onclick="mainView.router.reloadPage('componentb_2.html')" class="item-content item-link" style="background-image: none; padding-left: 0px">
+                                                <div class="item-inner"  style="background-image: none; padding: 0px  8px">
+                                                    <div class="item-title-row">
+                                                        <div class="item-after" style="margin-left: 0px">01/06/13</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><b>Camshaft</b></div>
+                                                    <div class="item-title-row">
+                                                        <div style="text-align: right; justify-content: flex-end" class="item-after">CSMH350</div>
+                                                        <div class="item-after">000049402013</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                
+                                
+                                </ul>
+                        </div>
+                      </div>
+                            </div>
+                        
+                       
+                           
+                            </div>
+                      </div>
+                    </div>
+
+
+                        </div>
+                    </div>
+   
+                    
+                    </div>
+            </div>
+        </div>
+
+    </div>
+     
+</body>
+    
+    <!--Our javascript script-->
+    <script type="text/javascript" src="lib/Framework7-1.5.0/dist/js/framework7.min.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/script-own-emmanuel.js"></script>
+</body>
+
+</html>
