@@ -178,7 +178,7 @@ function componentRemoved (engine) {
                 $('.showMe').toggleClass('move');
                 }, 500);
             }, 500);
-        }, 3000);
+        }, 1500);
     }
 }
 
@@ -223,7 +223,7 @@ function componentAdded (engine) {
                 $('.showMe').toggleClass('move');
                 }, 500);
             }, 500);
-        }, 3000);
+        }, 1500);
     }
 }
 
